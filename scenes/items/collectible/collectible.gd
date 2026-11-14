@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 	
 func on_player_touch(body: Node2D) -> void:
 	if body is Player:
-		collected = true
-		hide()
+		Global.collected_collectibles += 1
+		queue_free()
 	
 	

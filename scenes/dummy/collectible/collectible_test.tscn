@@ -15,3 +15,6 @@ position = Vector2(-161, -18)
 
 [node name="collectible" parent="." unique_id=1021720470 instance=ExtResource("3_kcgn6")]
 position = Vector2(132, -101)
+
+[node name="collectible2" parent="." unique_id=1021277217 instance=ExtResource("3_kcgn6")]
+position = Vector2(252, -36)
