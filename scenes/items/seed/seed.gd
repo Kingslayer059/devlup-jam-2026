@@ -8,3 +8,4 @@ var planted := false
 func interact() -> void:
 	if !planted:
 		Global.player_carry.emit(self, seed_scene)
+		planted = true

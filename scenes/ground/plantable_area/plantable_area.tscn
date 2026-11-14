@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://b0cb8r03b35b7"]
 
-[ext_resource type="Texture2D" uid="uid://dotem78qj3rnd" path="res://scenes/dummy/player/dummy_tileset.png" id="1_7bq5p"]
 [ext_resource type="Script" uid="uid://bvpv3uk22m1pp" path="res://scenes/ground/plantable_area/plantable_area.gd" id="1_b7o7a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b7o7a"]
@@ -10,11 +9,6 @@ size = Vector2(32, 32)
 texture_filter = 1
 collision_layer = 6
 script = ExtResource("1_b7o7a")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1518219215]
-texture = ExtResource("1_7bq5p")
-hframes = 4
-frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1613938087]
 shape = SubResource("RectangleShape2D_b7o7a")
