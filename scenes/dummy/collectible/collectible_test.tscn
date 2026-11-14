@@ -1,0 +1,17 @@
+[gd_scene format=4 uid="uid://dm4nqds8hhy8x"]
+
+[ext_resource type="PackedScene" uid="uid://c70btmm5lk4qp" path="res://scenes/dummy/player/dummy_tileset.tscn" id="1_2xjqf"]
+[ext_resource type="PackedScene" uid="uid://d2pdj71x7vy3t" path="res://scenes/player/player.tscn" id="2_4d2bn"]
+[ext_resource type="PackedScene" uid="uid://ba5gpwub2laup" path="res://scenes/items/collectible/collectible.tscn" id="3_kcgn6"]
+
+[node name="CollectibleTest" type="Node2D" unique_id=2010300777]
+position = Vector2(265, 241)
+
+[node name="DummyTileset" parent="." unique_id=1495820312 instance=ExtResource("1_2xjqf")]
+tile_map_data = PackedByteArray("AAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAD//wAAAAABAAAAAAD+/wAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAEAP7/AAABAAAAAAADAP7/AAABAAAAAAD9/wAAAAABAAAAAAD8/wAAAAABAAAAAAD7/wAAAAABAAAAAAD6/wAAAAABAAAAAAD5/wAAAAABAAAAAAAFAAAAAAABAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAJAAAAAAABAAAAAAA=")
+
+[node name="Player" parent="DummyTileset" unique_id=1394662000 instance=ExtResource("2_4d2bn")]
+position = Vector2(-161, -18)
+
+[node name="collectible" parent="." unique_id=1021720470 instance=ExtResource("3_kcgn6")]
+position = Vector2(132, -101)
