@@ -8,7 +8,6 @@ extends CharacterBody2D
 @onready var interact: Area2D = %Interact
 @onready var reach: CollisionShape2D = $Interact/CollisionShape2D
 
-var is_carrying := false
 var direction: Vector2: 
 	set(_direction):
 		direction = _direction
@@ -22,7 +21,6 @@ var current_item: Item
 func _ready() -> void:
 	Global.player = self
 	Global.player_carry.connect(on_player_carry)
-	Global.player_plant.connect(on_player_plant)
 
 func _physics_process(_delta: float) -> void:
 	if !is_on_floor():
@@ -44,16 +42,11 @@ func _physics_process(_delta: float) -> void:
 	
 
 func on_player_carry(item: Item, scene: PackedScene) -> void:
-	if is_carrying:
-		return
-	is_carrying = true
+	if current_item != null:
+		return;
 	item.queue_free()
-	get_node(item.get_path())
 
 	var new_item: Item = scene.instantiate()
 	add_child(new_item)
 	new_item.position = Vector2(0, -20)
 	current_item = new_item
-
-func on_player_plant() -> void:
-	is_carrying = false

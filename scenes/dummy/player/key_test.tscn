@@ -22,3 +22,4 @@ position = Vector2(194, 303)
 
 [node name="KeyGate" parent="." unique_id=1522181517 instance=ExtResource("5_r52vg")]
 position = Vector2(136, 305)
+scale = Vector2(1.0606228, 3.8875213)
