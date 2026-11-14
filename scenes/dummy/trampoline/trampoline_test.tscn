@@ -1,0 +1,16 @@
+[gd_scene format=4 uid="uid://d0t75eqem6sf8"]
+
+[ext_resource type="PackedScene" uid="uid://c70btmm5lk4qp" path="res://scenes/dummy/player/dummy_tileset.tscn" id="1_hcsbq"]
+[ext_resource type="PackedScene" uid="uid://d2pdj71x7vy3t" path="res://scenes/player/player.tscn" id="2_mg30y"]
+[ext_resource type="PackedScene" uid="uid://bk3dxo8gfygls" path="res://scenes/ground/trampoline/trampoline.tscn" id="3_vmr1j"]
+
+[node name="TrampolineTest" type="Node2D" unique_id=444640387]
+
+[node name="DummyTileset" parent="." unique_id=1495820312 instance=ExtResource("1_hcsbq")]
+tile_map_data = PackedByteArray("AAABAAcAAAABAAAAAAACAAcAAAABAAAAAAADAAcAAAABAAAAAAAEAAcAAAABAAAAAAAFAAcAAAABAAAAAAAGAAcAAAABAAAAAAAHAAcAAAABAAAAAAAIAAcAAAABAAAAAAAJAAcAAAABAAAAAAAKAAcAAAABAAAAAAALAAcAAAABAAAAAAAMAAcAAAABAAAAAAANAAcAAAABAAAAAAAOAAcAAAABAAAAAAAPAAcAAAABAAAAAAAQAAcAAAABAAAAAAAMAAIAAAABAAAAAAANAAIAAAABAAAAAAAOAAIAAAABAAAAAAAPAAIAAAABAAAAAAA=")
+
+[node name="Player" parent="." unique_id=1394662000 instance=ExtResource("2_mg30y")]
+position = Vector2(68, 205)
+
+[node name="Trampoline" parent="." unique_id=864446011 instance=ExtResource("3_vmr1j")]
+position = Vector2(334, 220)
