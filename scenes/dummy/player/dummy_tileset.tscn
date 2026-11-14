@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c70btmm5lk4qp"]
+
+[ext_resource type="Texture2D" uid="uid://dotem78qj3rnd" path="res://scenes/dummy/player/dummy_tileset.png" id="1_7alb1"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u587y"]
+texture = ExtResource("1_7alb1")
+texture_region_size = Vector2i(32, 32)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_h03gr"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 2
+sources/0 = SubResource("TileSetAtlasSource_u587y")
+
+[node name="DummyTileset" type="TileMapLayer" unique_id=1495820312]
+texture_filter = 1
+tile_set = SubResource("TileSet_h03gr")
