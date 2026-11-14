@@ -16,9 +16,12 @@ var direction: Vector2:
 	get:
 		return direction
 var last_direction := Vector2.ZERO
+var current_item: Item
 
 func _ready() -> void:
+	Global.player = self
 	Global.player_carry.connect(on_player_carry)
+	Global.player_plant.connect(on_player_plant)
 
 func _physics_process(_delta: float) -> void:
 	if !is_on_floor():
@@ -34,10 +37,10 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interact"):
 		var areas := interact.get_overlapping_areas()
 		if areas.size() > 0:
-			var area: Variant = areas.front()
-			if area is Interactable:
-				var interactable: Interactable = areas.front() as Interactable
-				interactable.interact()
+			for area in areas:
+				if area is Interactable:
+					var interactable: Interactable = area as Interactable
+					interactable.interact()
 	
 
 func on_player_carry(item: Item, scene: PackedScene) -> void:
@@ -50,3 +53,7 @@ func on_player_carry(item: Item, scene: PackedScene) -> void:
 	var new_item: Item = scene.instantiate()
 	add_child(new_item)
 	new_item.position = Vector2(0, -20)
+	current_item = new_item
+
+func on_player_plant() -> void:
+	is_carrying = false
