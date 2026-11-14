@@ -9,7 +9,7 @@ extends Node2D
 func _ready() -> void:
 	Global.is_present = true
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("time_swap"):
 		if present.is_visible_in_tree():
 			past.visible = true
@@ -19,6 +19,7 @@ func _physics_process(delta: float) -> void:
 			present_tileset.collision_enabled = false
 			
 			Global.is_present = false
+			Global.change_to_past.emit()
 		elif past.is_visible_in_tree():
 			present.visible = true
 			present_tileset.collision_enabled = true
@@ -27,3 +28,4 @@ func _physics_process(delta: float) -> void:
 			past_tileset.collision_enabled = false
 			
 			Global.is_present = true
+			Global.change_to_present.emit()
