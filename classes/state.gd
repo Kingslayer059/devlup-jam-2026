@@ -1,5 +1,5 @@
 class_name State
-extends Node2D
+extends Node
 
 signal state_finished
 
