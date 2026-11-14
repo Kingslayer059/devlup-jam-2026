@@ -1,0 +1,31 @@
+[gd_scene format=4 uid="uid://bhofjcttjuwsf"]
+
+[ext_resource type="Script" uid="uid://c87xxjiwwn6q0" path="res://scenes/dummy/time/time_swap.gd" id="1_s1qkl"]
+[ext_resource type="PackedScene" uid="uid://c70btmm5lk4qp" path="res://scenes/dummy/player/dummy_tileset.tscn" id="2_a70p5"]
+[ext_resource type="PackedScene" uid="uid://d2pdj71x7vy3t" path="res://scenes/player/player.tscn" id="3_p40kl"]
+[ext_resource type="PackedScene" uid="uid://ux4khvu53ltx" path="res://scenes/items/seed/seed.tscn" id="3_rqync"]
+
+[node name="TimeTest" type="Node2D" unique_id=401642050 node_paths=PackedStringArray("past", "present", "past_tileset", "present_tileset")]
+script = ExtResource("1_s1qkl")
+past = NodePath("Past")
+present = NodePath("Present")
+past_tileset = NodePath("Past/DummyTileset")
+present_tileset = NodePath("Present/DummyTileset")
+
+[node name="Past" type="Node2D" parent="." unique_id=1749830330]
+visible = false
+
+[node name="DummyTileset" parent="Past" unique_id=1495820312 instance=ExtResource("2_a70p5")]
+tile_map_data = PackedByteArray("AAAAAAoAAAABAAAAAAABAAoAAAABAAAAAAACAAoAAAABAAAAAAADAAoAAAABAAAAAAAEAAoAAAABAAAAAAAFAAoAAAABAAAAAAAGAAoAAAABAAAAAAAHAAoAAAABAAAAAAAIAAoAAAABAAAAAAAJAAoAAAABAAAAAAAKAAoAAAABAAAAAAALAAoAAAABAAAAAAANAAoAAAABAAAAAAAOAAoAAAABAAAAAAAPAAoAAAABAAAAAAAQAAoAAAABAAAAAAARAAoAAAABAAAAAAASAAoAAAABAAAAAAATAAoAAAABAAAAAAAFAAgAAAABAAAAAAAGAAgAAAABAAAAAAAHAAgAAAABAAAAAAAKAAYAAAABAAAAAAALAAYAAAABAAAAAAAMAAYAAAABAAAAAAANAAYAAAABAAAAAAAMAAoAAgAAAAAAAQAPAAQAAAABAAAAAAAQAAQAAAABAAAAAAARAAQAAAABAAAAAAASAAQAAAABAAAAAAA=")
+collision_enabled = false
+
+[node name="Present" type="Node2D" parent="." unique_id=642925143]
+
+[node name="DummyTileset" parent="Present" unique_id=546704641 instance=ExtResource("2_a70p5")]
+tile_map_data = PackedByteArray("AAAAAAoAAAADAAAAAAABAAoAAAADAAAAAAACAAoAAAADAAAAAAADAAoAAAADAAAAAAAEAAoAAAADAAAAAAAFAAoAAAADAAAAAAAGAAoAAAADAAAAAAAHAAoAAAADAAAAAAAIAAoAAAADAAAAAAAJAAoAAAADAAAAAAAKAAoAAAADAAAAAAALAAoAAAADAAAAAAAMAAoAAAACAAAAAAANAAoAAAADAAAAAAAOAAoAAAADAAAAAAAPAAoAAAADAAAAAAAQAAoAAAADAAAAAAARAAoAAAADAAAAAAASAAoAAAADAAAAAAATAAoAAAADAAAAAAAFAAgAAAADAAAAAAAGAAgAAAADAAAAAAAHAAgAAAADAAAAAAASAAQAAAADAAAAAAARAAQAAAADAAAAAAAQAAQAAAADAAAAAAAPAAQAAAADAAAAAAA=")
+
+[node name="Seed" parent="Present" unique_id=1744408064 instance=ExtResource("3_rqync")]
+position = Vector2(612, 309)
+
+[node name="Player" parent="." unique_id=1394662000 instance=ExtResource("3_p40kl")]
+position = Vector2(313, 258)

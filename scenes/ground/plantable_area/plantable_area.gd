@@ -1,6 +1,8 @@
 extends Interactable
 
 func interact() -> void:
+	if Global.is_present:
+		return
 	
 	if Global.player.is_carrying and Global.player.current_item is Seed:
 		Global.player_plant.emit()
