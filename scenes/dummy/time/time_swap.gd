@@ -8,9 +8,13 @@ extends Node2D
 
 func _ready() -> void:
 	Global.is_present = true
+	
+func _process(delta: float) -> void:
+	pass
 
-func _physics_process(_delta: float) -> void:
-	if Input.is_action_just_pressed("time_swap"):
+func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("time_swap"): 
+		Global.time_swap_initiated.emit() 			## required for audio swap
 		if present.is_visible_in_tree():
 			past.visible = true
 			past_tileset.collision_enabled = true
