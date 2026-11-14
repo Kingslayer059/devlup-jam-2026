@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cpn6k8o051ate"]
+
+[ext_resource type="Texture2D" uid="uid://dotem78qj3rnd" path="res://scenes/dummy/player/dummy_tileset.png" id="1_4lxv6"]
+[ext_resource type="Script" uid="uid://c1n7sqetqsr4f" path="res://scenes/ground/key_gate/key_gate.gd" id="1_kndvp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kndvp"]
+size = Vector2(32, 32)
+
+[node name="KeyGate" type="StaticBody2D" unique_id=1522181517]
+scale = Vector2(1, 3.8000007)
+collision_layer = 2
+script = ExtResource("1_kndvp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=831589842]
+texture = ExtResource("1_4lxv6")
+hframes = 4
+frame = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1108395853]
+shape = SubResource("RectangleShape2D_kndvp")

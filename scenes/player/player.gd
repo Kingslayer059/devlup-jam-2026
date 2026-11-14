@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var gravity := 60
 
 @onready var interact: Area2D = %Interact
+@onready var reach: CollisionShape2D = $Interact/CollisionShape2D
 
 var is_carrying := false
 var direction: Vector2: 
@@ -35,12 +36,11 @@ func _physics_process(_delta: float) -> void:
 		interact.position.x = -abs(interact.position.x)
 	
 	if Input.is_action_just_pressed("interact"):
-		var areas := interact.get_overlapping_areas()
-		if areas.size() > 0:
-			for area in areas:
-				if area is Interactable:
-					var interactable: Interactable = area as Interactable
-					interactable.interact()
+		for item: Interactable in get_tree().get_nodes_in_group("interactables"):
+			if (!item.is_visible_in_tree() || is_ancestor_of(item) || !item.is_in_reach(self)):
+				continue;
+			item.interact();
+			break;
 	
 
 func on_player_carry(item: Item, scene: PackedScene) -> void:
