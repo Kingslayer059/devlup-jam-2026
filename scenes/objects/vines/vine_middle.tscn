@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c6lxojqstrfj6"]
+[gd_scene format=3 uid="uid://d1hdc64qorova"]
 
 [ext_resource type="Script" uid="uid://s3iql5xjoioe" path="res://scenes/objects/vines/vines.gd" id="1_8le7w"]
 [ext_resource type="Texture2D" uid="uid://bl3o8t2s647kt" path="res://scenes/objects/vines/vine_sheet.png" id="2_8le7w"]
