@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://c87xxjiwwn6q0" path="res://scenes/dummy/time/time_swap.gd" id="2_bfxgj"]
 [ext_resource type="AudioStream" uid="uid://b6173wfry5vty" path="res://music/jam.mp3" id="2_dywbp"]
 [ext_resource type="AudioStream" uid="uid://b0k1h7fsxqvin" path="res://music/cornipelago-past-theme.mp3" id="3_1seuy"]
+[ext_resource type="PackedScene" uid="uid://clo51nqecynl6" path="res://scenes/tilemap/background_tilemap.tscn" id="5_plydf"]
 [ext_resource type="PackedScene" uid="uid://d2pdj71x7vy3t" path="res://scenes/player/player.tscn" id="6_1seuy"]
 [ext_resource type="PackedScene" uid="uid://ba5gpwub2laup" path="res://scenes/items/collectible/collectible.tscn" id="7_2r1tl"]
 
@@ -14,6 +15,10 @@ stream_0/stream = ExtResource("2_dywbp")
 stream_0/volume = 0.0
 stream_1/stream = ExtResource("3_1seuy")
 stream_1/volume = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ntmo"]
+resource_local_to_scene = true
+size = Vector2(182, 96)
 
 [node name="Level1" type="Node2D" unique_id=631564884]
 script = ExtResource("1_dd0lh")
@@ -36,10 +41,16 @@ present_tileset = NodePath("Present/MainTileMapPresent")
 [node name="Past" type="Node2D" parent="TimeSwap" unique_id=1157280643]
 visible = false
 
+[node name="BackgroundTilemap" parent="TimeSwap/Past" unique_id=899568984 instance=ExtResource("5_plydf")]
+tile_map_data = PackedByteArray("AAADABAAAAABAAEAAAALABAAAAAAAAEAAAATABAAAAABAAEAAAAbABAAAAAAAAEAAAAjABAAAAABAAEAAAArABAAAAABAAEAAAADAAkAAAAAAAAAAAALAAkAAAAAAAAAAAATAAkAAAAAAAAAAAAbAAkAAAAAAAAAAAAjAAkAAAAAAAAAAAAqAAkAAAAAAAAAAAAqAAIAAAABAAAAAAAiAAIAAAABAAAAAAAaAAIAAAABAAAAAAASAAIAAAABAAAAAAAKAAIAAAABAAAAAAADAAIAAAABAAAAAAA=")
+
 [node name="MainTileMapPast" parent="TimeSwap/Past" unique_id=2083922039 instance=ExtResource("1_x6ivy")]
 tile_map_data = PackedByteArray("AAAAAAoAAgAAAAAAAAABAAoAAgAAAAAAAAACAAoAAgAAAAAAAAADAAoAAgAAAAAAAAAEAAoAAgAAAAAAAAAFAAoAAgAAAAAAAAAGAAoAAgAAAAAAAAAHAAoAAgAAAAAAAAAIAAoAAgAAAAAAAAAJAAoAAgAAAAAAAAAKAAoAAgAAAAAAAAALAAoAAgAAAAAAAAAMAAoAAgAAAAAAAAANAAoAAgAAAAAAAAAOAAoAAgAAAAAAAAAPAAoAAgAAAAAAAAAQAAoAAgAAAAAAAAARAAoAAgAAAAAAAAASAAoAAgAAAAAAAAATAAoAAgAAAAAAAAADAAgAAgAAAAAAAAAEAAgAAgAAAAAAAAAFAAgAAgAAAAAAAAAGAAgAAgAAAAAAAAAJAAYAAgAAAAAAAAAKAAYAAgAAAAAAAAANAAQAAgAAAAAAAAAOAAQAAgAAAAAAAAAPAAQAAgAAAAAAAAAQAAQAAgAAAAAAAAAIAAYAAgAAAAAAAAALAAYAAgAAAAAAAAA=")
 
 [node name="Present" type="Node2D" parent="TimeSwap" unique_id=130517471]
+
+[node name="BackgroundTilemap" parent="TimeSwap/Present" unique_id=1979546188 instance=ExtResource("5_plydf")]
+tile_map_data = PackedByteArray("AAADABAAAQAAAAEAAAALABAAAQACAAEAAAATABAAAQABAAEAAAAbABAAAQAAAAEAAAAjABAAAQACAAEAAAArABAAAQACAAEAAAADAAkAAQAAAAAAAAALAAkAAQAAAAAAAAATAAkAAQAAAAAAAAAbAAkAAQAAAAAAAAAjAAkAAQAAAAAAAAArAAkAAQAAAAAAAAADAAIAAQABAAAAAAALAAIAAQABAAAAAAATAAIAAQABAAAAAAAbAAIAAQABAAAAAAAjAAIAAQABAAAAAAArAAIAAQABAAAAAAA=")
 
 [node name="MainTileMapPresent" parent="TimeSwap/Present" unique_id=1037921351 instance=ExtResource("1_x6ivy")]
 tile_map_data = PackedByteArray("AAATAAoAAgAAAAEAAAASAAoAAgAAAAEAAAARAAoAAgAAAAEAAAAQAAoAAgAAAAEAAAAPAAoAAgAAAAEAAAAOAAoAAgAAAAEAAAANAAoAAgAAAAEAAAAMAAoAAgAAAAEAAAALAAoAAgAAAAEAAAAKAAoAAgAAAAEAAAAJAAoAAgAAAAEAAAAIAAoAAgAAAAEAAAAHAAoAAgAAAAEAAAAGAAoAAgAAAAEAAAAFAAoAAgAAAAEAAAAEAAoAAgAAAAEAAAADAAoAAgAAAAEAAAACAAoAAgAAAAEAAAABAAoAAgAAAAEAAAAAAAoAAgAAAAEAAAADAAgAAgAAAAEAAAAEAAgAAgAAAAEAAAAFAAgAAgAAAAEAAAAGAAgAAgAAAAEAAAAIAAYAAgAAAAEAAAAJAAYAAgAAAAEAAAAKAAYAAgAAAAEAAAALAAYAAgAAAAEAAAANAAQAAgAAAAEAAAAOAAQAAgAAAAEAAAAPAAQAAgAAAAEAAAAQAAQAAgAAAAEAAAA=")
@@ -56,5 +67,12 @@ limit_bottom = 353
 
 [node name="collectible" parent="." unique_id=1021277217 instance=ExtResource("7_2r1tl")]
 position = Vector2(557, 57)
+
+[node name="TimeZone" parent="." unique_id=2012884424 instance=ExtResource("8_8a7m2")]
+position = Vector2(284, 289)
+
+[node name="CollisionShape2D" parent="TimeZone" index="0" unique_id=1175480012]
+position = Vector2(40.5, -18.5)
+shape = SubResource("RectangleShape2D_5ntmo")
 
 [editable path="Player"]
