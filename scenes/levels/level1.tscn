@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d2pdj71x7vy3t" path="res://scenes/player/player.tscn" id="6_1seuy"]
 [ext_resource type="PackedScene" uid="uid://ba5gpwub2laup" path="res://scenes/items/collectible/collectible.tscn" id="7_2r1tl"]
 
-[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_2r1tl"]
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_cicjy"]
 stream_count = 2
 stream_0/stream = ExtResource("2_dywbp")
 stream_0/volume = 0.0
@@ -20,7 +20,7 @@ script = ExtResource("1_dd0lh")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2087684283]
 unique_name_in_owner = true
-stream = SubResource("AudioStreamSynchronized_2r1tl")
+stream = SubResource("AudioStreamSynchronized_cicjy")
 autoplay = true
 
 [node name="AudioStreamPlayerSFX" type="AudioStreamPlayer2D" parent="." unique_id=581108965]
@@ -34,12 +34,12 @@ past_tileset = NodePath("Past/MainTileMapPast")
 present_tileset = NodePath("Present/MainTileMapPresent")
 
 [node name="Past" type="Node2D" parent="TimeSwap" unique_id=1157280643]
+visible = false
 
 [node name="MainTileMapPast" parent="TimeSwap/Past" unique_id=2083922039 instance=ExtResource("1_x6ivy")]
 tile_map_data = PackedByteArray("AAAAAAoAAgAAAAAAAAABAAoAAgAAAAAAAAACAAoAAgAAAAAAAAADAAoAAgAAAAAAAAAEAAoAAgAAAAAAAAAFAAoAAgAAAAAAAAAGAAoAAgAAAAAAAAAHAAoAAgAAAAAAAAAIAAoAAgAAAAAAAAAJAAoAAgAAAAAAAAAKAAoAAgAAAAAAAAALAAoAAgAAAAAAAAAMAAoAAgAAAAAAAAANAAoAAgAAAAAAAAAOAAoAAgAAAAAAAAAPAAoAAgAAAAAAAAAQAAoAAgAAAAAAAAARAAoAAgAAAAAAAAASAAoAAgAAAAAAAAATAAoAAgAAAAAAAAADAAgAAgAAAAAAAAAEAAgAAgAAAAAAAAAFAAgAAgAAAAAAAAAGAAgAAgAAAAAAAAAJAAYAAgAAAAAAAAAKAAYAAgAAAAAAAAANAAQAAgAAAAAAAAAOAAQAAgAAAAAAAAAPAAQAAgAAAAAAAAAQAAQAAgAAAAAAAAAIAAYAAgAAAAAAAAALAAYAAgAAAAAAAAA=")
 
 [node name="Present" type="Node2D" parent="TimeSwap" unique_id=130517471]
-visible = false
 
 [node name="MainTileMapPresent" parent="TimeSwap/Present" unique_id=1037921351 instance=ExtResource("1_x6ivy")]
 tile_map_data = PackedByteArray("AAATAAoAAgAAAAAAAAASAAoAAgAAAAAAAAARAAoAAgAAAAAAAAAQAAoAAgAAAAAAAAAPAAoAAgAAAAAAAAAOAAoAAgAAAAAAAAANAAoAAgAAAAAAAAAMAAoAAgAAAAAAAAALAAoAAgAAAAAAAAAKAAoAAgAAAAAAAAAJAAoAAgAAAAAAAAAIAAoAAgAAAAAAAAAHAAoAAgAAAAAAAAAGAAoAAgAAAAAAAAAFAAoAAgAAAAAAAAAEAAoAAgAAAAAAAAADAAoAAgAAAAAAAAACAAoAAgAAAAAAAAABAAoAAgAAAAAAAAAAAAoAAgAAAAAAAAADAAgAAgAAAAAAAAAEAAgAAgAAAAAAAAAFAAgAAgAAAAAAAAAGAAgAAgAAAAAAAAAIAAYAAgAAAAAAAAAJAAYAAgAAAAAAAAAKAAYAAgAAAAAAAAALAAYAAgAAAAAAAAANAAQAAgAAAAAAAAAOAAQAAgAAAAAAAAAPAAQAAgAAAAAAAAAQAAQAAgAAAAAAAAA=")
