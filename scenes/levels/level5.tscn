@@ -1,0 +1,114 @@
+[gd_scene format=4 uid="uid://bek8v478vwdq6"]
+
+[ext_resource type="Script" uid="uid://bto5hs3mgu8bm" path="res://scenes/main/main_scene.gd" id="1_lsgss"]
+[ext_resource type="AudioStream" uid="uid://b6173wfry5vty" path="res://music/jam.mp3" id="2_sd6f7"]
+[ext_resource type="AudioStream" uid="uid://b0k1h7fsxqvin" path="res://music/cornipelago-past-theme.mp3" id="3_vnf24"]
+[ext_resource type="Script" uid="uid://c87xxjiwwn6q0" path="res://scenes/dummy/time/time_swap.gd" id="4_pm1y0"]
+[ext_resource type="PackedScene" uid="uid://dtq3ror6kqxks" path="res://scenes/tilemap/main_tile_map.tscn" id="5_2eb3b"]
+[ext_resource type="PackedScene" uid="uid://b1clgmxbqdqse" path="res://scenes/tilemap/bridge_tile_map.tscn" id="6_kykwg"]
+[ext_resource type="PackedScene" uid="uid://cpn6k8o051ate" path="res://scenes/ground/key_gate/key_gate.tscn" id="7_iyn63"]
+[ext_resource type="PackedScene" uid="uid://d2pdj71x7vy3t" path="res://scenes/player/player.tscn" id="8_1ix84"]
+[ext_resource type="PackedScene" uid="uid://b0cb8r03b35b7" path="res://scenes/ground/plantable_area/plantable_area.tscn" id="8_4x4hb"]
+[ext_resource type="PackedScene" uid="uid://ba5gpwub2laup" path="res://scenes/items/collectible/collectible.tscn" id="9_4x4hb"]
+[ext_resource type="PackedScene" uid="uid://b84kpfeabhy5y" path="res://scenes/items/seed/pumpkin_seed/pumpkin_seed.tscn" id="9_fmais"]
+[ext_resource type="PackedScene" uid="uid://cthao4xerp2tt" path="res://scenes/items/seed/maple_seed/maple_seed.tscn" id="10_72xjh"]
+[ext_resource type="PackedScene" uid="uid://d1qde2eraxkgl" path="res://scenes/items/key/key.tscn" id="10_fmais"]
+[ext_resource type="PackedScene" uid="uid://ux4khvu53ltx" path="res://scenes/items/seed/corn_seed/corn_seed.tscn" id="11_xrw0o"]
+[ext_resource type="PackedScene" uid="uid://btfwybinplmky" path="res://scenes/objects/tree/maple_tree_base.tscn" id="12_4r5lo"]
+[ext_resource type="PackedScene" uid="uid://dsqysqjhjoosd" path="res://scenes/objects/tree/maple_tree_middle.tscn" id="13_po1mw"]
+[ext_resource type="PackedScene" uid="uid://cb11ijjejq37m" path="res://scenes/objects/tree/maple_tree_top.tscn" id="14_ngf84"]
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_2r1tl"]
+stream_count = 2
+stream_0/stream = ExtResource("2_sd6f7")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("3_vnf24")
+stream_1/volume = 0.0
+
+[node name="Level3" type="Node2D" unique_id=631564884]
+script = ExtResource("1_lsgss")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2087684283]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamSynchronized_2r1tl")
+autoplay = true
+
+[node name="AudioStreamPlayerSFX" type="AudioStreamPlayer2D" parent="." unique_id=2010632993]
+unique_name_in_owner = true
+
+[node name="TimeSwap" type="Node2D" parent="." unique_id=589447521 node_paths=PackedStringArray("past", "present", "past_tileset", "present_tileset")]
+script = ExtResource("4_pm1y0")
+past = NodePath("Past")
+present = NodePath("Present")
+past_tileset = NodePath("Past/MainTileMapPast")
+present_tileset = NodePath("Present/MainTileMapPresent")
+
+[node name="Past" type="Node2D" parent="TimeSwap" unique_id=1157280643]
+
+[node name="MainTileMapPast" parent="TimeSwap/Past" unique_id=2083922039 instance=ExtResource("5_2eb3b")]
+tile_map_data = PackedByteArray("AAAAAAoAAgAAAAAAAAABAAoAAgAAAAAAAAACAAoAAgAAAAAAAAADAAoAAgAAAAAAAAAEAAoAAgAAAAAAAAAFAAoAAgAAAAAAAAAGAAoAAgAAAAAAAAAHAAoAAgAAAAAAAAAIAAoAAgAAAAAAAAAJAAoAAgAAAAAAAAAKAAoAAgAAAAAAAAALAAoAAgAAAAAAAAAMAAoAAgAAAAAAAAANAAoAAgAAAAAAAAAOAAoAAgAAAAAAAAAPAAoAAgADAAAAAAAQAAoAAgAAAAAAAAARAAoAAgAAAAAAAAASAAoAAgAAAAAAAAATAAoAAgAAAAAAAAAUAAoAAgAAAAAAAAAVAAoAAgAAAAAAAAAWAAoAAgAAAAAAAAAXAAoAAgAAAAAAAAAYAAoAAgAAAAAAAAAZAAoAAgAAAAAAAAAkAAoAAgAAAAAAAAAlAAoAAgAAAAAAAAAmAAoAAgAAAAAAAAAnAAoAAgAAAAAAAAD//woAAgAAAAAAAAD+/woAAgAAAAAAAAD9/woAAgAAAAAAAAD8/woAAgAAAAAAAAD7/woAAgAAAAAAAAD6/woAAgAAAAAAAAD5/woAAgAAAAAAAAD4/woAAgAAAAAAAAD3/woAAgAAAAAAAAD2/woAAgAAAAAAAAD1/woAAgADAAAAAAD0/woAAgAAAAAAAADz/woAAgAAAAAAAADy/woAAgADAAAAAADx/woAAgAAAAAAAADw/woAAgAAAAAAAADv/woAAgAAAAAAAADu/woAAgAAAAAAAADt/woAAgAAAAAAAAA=")
+
+[node name="BridgeTileMap" parent="TimeSwap/Past" unique_id=1233093331 instance=ExtResource("6_kykwg")]
+tile_map_data = PackedByteArray("AAA8ABMAAAAJAAAAAAA8ABQAAAAEAAAAAAA9ABMAAAAJAAAAAAA9ABQAAAAEAAAAAAA9ABUAAAAGABAAAAA9ABYAAAAGABEAAAA9ABcAAAAGABIAAAA+ABMAAAAJAAAAAAA+ABQAAAAEAAAAAAA+ABUAAAAHABAAAAA+ABYAAAAHABEAAAA/ABMAAAAJAAAAAAA/ABQAAAAEAAAAAABAABMAAAAJAAAAAABAABQAAAAEAAAAAABBABMAAAAJAAAAAABBABQAAAAEAAAAAABCABMAAAAJAAAAAABCABQAAAAEAAAAAABDABMAAAAJAAAAAABDABQAAAAAAAQAAABEABMAAAAJAAAAAABEABQAAAABAAQAAABFABMAAAAJAAAAAABFABQAAAACAAQAAABFABUAAAACAAUAAABGABMAAAAJAAAAAABGABQAAAADAAQAAABGABUAAAADAAUAAABGABYAAAADAAYAAABHABMAAAAJAAAAAABHABQAAAAEAAQAAAA0ABMAAAAJAAAAAAA0ABQAAAAAAAAAAAA0ABUAAAAAAAEAAAA0ABYAAAAAAAIAAAA0ABcAAAAAAAMAAAA1ABMAAAAJAAAAAAA1ABQAAAABAAAAAAA1ABUAAAABAAEAAAA1ABYAAAABAAIAAAA1ABcAAAABAAMAAAA2ABMAAAAJAAAAAAA2ABQAAAACAAAAAAA2ABUAAAACAAEAAAA2ABYAAAACAAIAAAA3ABMAAAAJAAAAAAA3ABQAAAADAAAAAAA3ABUAAAADAAEAAAA4ABMAAAAJAAAAAAA4ABQAAAAEAAAAAAA4ABUAAAAEAAEAAAA5ABMAAAAJAAAAAAA5ABQAAAAEAAAAAAA6ABMAAAAJAAAAAAA6ABQAAAAEAAAAAAA7ABMAAAAJAAAAAAA7ABQAAAAEAAAAAAA+ABcAAAAHABIAAABEABUAAAABAAUAAABHABUAAAAEAAUAAABHABYAAAAEAAYAAABHABcAAAAEAAcAAAA=")
+
+[node name="KeyGate" parent="TimeSwap/Past" unique_id=1522181517 instance=ExtResource("7_iyn63")]
+position = Vector2(398, 259)
+collision_layer = 16
+
+[node name="PlantableArea2" parent="TimeSwap/Past" unique_id=950168230 instance=ExtResource("8_4x4hb")]
+position = Vector2(81, 335)
+
+[node name="PlantableArea" parent="TimeSwap/Past" unique_id=2076011125 instance=ExtResource("8_4x4hb")]
+position = Vector2(497, 401)
+
+[node name="PlantableArea3" parent="TimeSwap/Past" unique_id=1929860196 instance=ExtResource("8_4x4hb")]
+position = Vector2(-432, 334)
+
+[node name="PlantableArea4" parent="TimeSwap/Past" unique_id=837381477 instance=ExtResource("8_4x4hb")]
+position = Vector2(-334, 336)
+
+[node name="Present" type="Node2D" parent="TimeSwap" unique_id=130517471]
+
+[node name="MainTileMapPresent" parent="TimeSwap/Present" unique_id=1037921351 instance=ExtResource("5_2eb3b")]
+tile_map_data = PackedByteArray("AAAKAAoAAgAAAAEAAAAJAAoAAgAAAAEAAAAIAAoAAgAAAAEAAAAHAAoAAgAAAAEAAAAGAAoAAgAAAAEAAAAEAAoAAgAAAAEAAAADAAoAAgAAAAEAAAACAAoAAgADAAEAAAABAAoAAgAAAAEAAAAAAAoAAgABAAEAAAAZAAoAAgAAAAEAAAAFAAoAAgAAAAEAAAAkAAoAAgAAAAEAAAAlAAoAAgAAAAEAAAAmAAoAAgAAAAEAAAAnAAoAAgACAAEAAAAaAAoAAgAAAAEAAAAbAAoAAgAAAAEAAAAcAAoAAgAAAAEAAAAdAAoAAgAAAAEAAAAeAAoAAgAAAAEAAAAfAAoAAgAAAAEAAAAgAAoAAgAAAAEAAAAhAAoAAgAAAAEAAAAiAAoAAgAAAAEAAAAjAAoAAgAAAAEAAAD//woAAgAAAAEAAAD+/woAAgAAAAEAAAD8/woAAgAAAAEAAAD7/woAAgAAAAEAAAD6/woAAgAAAAEAAAD5/woAAgAAAAEAAAD4/woAAgAAAAEAAAD3/woAAgAAAAEAAAD2/woAAgAAAAEAAAD1/woAAgADAAEAAAD0/woAAgAAAAEAAADz/woAAgAAAAEAAADy/woAAgADAAEAAADx/woAAgAAAAEAAADw/woAAgAAAAEAAADv/woAAgAAAAEAAADu/woAAgAAAAEAAADt/woAAgAAAAEAAAANAAwAAgAAAAEAAAAOAAwAAgAAAAEAAAAPAAwAAgAAAAEAAAAQAAwAAgAAAAEAAAARAAcAAgAAAAEAAAASAAcAAgAAAAEAAAATAAcAAgAAAAEAAADz/wAAAgAAAAEAAADy/wAAAgAAAAEAAADx/wAAAgAAAAEAAADw/wAAAgAAAAEAABDv/wAAAgAAAAEAABA=")
+collision_enabled = false
+
+[node name="BridgeTileMap" parent="TimeSwap/Present" unique_id=2072685829 instance=ExtResource("6_kykwg")]
+tile_map_data = PackedByteArray("AAAWABQAAAAAAAgAAAAWABUAAAAAAAkAAAAWABYAAAAAAAoAAAAWABcAAAAAAAsAAAAXABQAAAABAAgAAAAXABUAAAABAAkAAAAXABYAAAABAAoAAAAXABcAAAABAAsAAAAYABQAAAACAAgAAAAYABUAAAACAAkAAAAYABYAAAACAAoAAAAZABQAAAADAAgAAAAZABUAAAADAAkAAAAaABQAAAAEAAgAAAAaABUAAAAEAAkAAAAtABQAAAAAAAwAAAAtABUAAAAAAA0AAAAuABQAAAABAAwAAAAuABUAAAABAA0AAAAvABQAAAACAAwAAAAvABUAAAACAA0AAAAvABYAAAACAA4AAAAwABQAAAADAAwAAAAwABUAAAADAA0AAAAwABYAAAADAA4AAAAwABcAAAADAA8AAAAxABQAAAAEAAwAAAAxABUAAAAEAA0AAAAxABYAAAAEAA4AAAAxABcAAAAEAA8AAAA=")
+
+[node name="PumpkinSeed" parent="TimeSwap/Present" unique_id=1372728815 instance=ExtResource("9_fmais")]
+position = Vector2(-514, 298)
+
+[node name="MapleSeed" parent="TimeSwap/Present" unique_id=342273772 instance=ExtResource("10_72xjh")]
+position = Vector2(902, 297)
+
+[node name="CornSeed" parent="TimeSwap/Present" unique_id=1281901391 instance=ExtResource("11_xrw0o")]
+position = Vector2(592, 206)
+
+[node name="MapleTreeBase" parent="TimeSwap/Present" unique_id=687658038 instance=ExtResource("12_4r5lo")]
+visible = false
+position = Vector2(-431, 304)
+
+[node name="MapleTreeMiddle" parent="TimeSwap/Present/MapleTreeBase" unique_id=236328037 instance=ExtResource("13_po1mw")]
+position = Vector2(0, -29)
+
+[node name="MapleTreeTop" parent="TimeSwap/Present/MapleTreeBase" unique_id=802021078 instance=ExtResource("14_ngf84")]
+position = Vector2(1, -106)
+
+[node name="MapleTreeMiddle2" parent="TimeSwap/Present/MapleTreeBase" unique_id=140986295 instance=ExtResource("13_po1mw")]
+position = Vector2(0, -58)
+
+[node name="CornSeed2" parent="TimeSwap/Present" unique_id=547349227 instance=ExtResource("11_xrw0o")]
+position = Vector2(-430, 156)
+
+[node name="KeyGate" parent="TimeSwap/Present" unique_id=1794259550 instance=ExtResource("7_iyn63")]
+position = Vector2(-433, -62)
+
+[node name="Player" parent="." unique_id=1394662000 instance=ExtResource("8_1ix84")]
+position = Vector2(40, 301)
+
+[node name="collectible" parent="." unique_id=1021277217 instance=ExtResource("9_4x4hb")]
+position = Vector2(-497, -49)
+
+[node name="Key" parent="." unique_id=1373023930 instance=ExtResource("10_fmais")]
+position = Vector2(783, 302)
