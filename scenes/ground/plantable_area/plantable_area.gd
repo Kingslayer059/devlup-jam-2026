@@ -37,6 +37,17 @@ func interact() -> void:
 	
 	if Global.player.current_item is Seed:
 		var seed_item: Seed = Global.player.current_item as Seed
+		
+		if seed_item.plant_type == "vines":
+			if vines == null:
+				return
+		if seed_item.plant_type == "maple_tree":
+			if maple_tree == null:
+				return
+		if seed_item.plant_type == "pumpkin":
+			if pumpkin == null:
+				return
+		
 		seed_item.queue_free()
 		
 		var seed_scene: PackedScene = load(seed_item.scene_file_path);
