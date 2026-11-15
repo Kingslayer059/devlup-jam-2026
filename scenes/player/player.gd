@@ -12,6 +12,8 @@ extends CharacterBody2D
 @onready var sprite: Sprite2D = %Sprite2D
 @onready var time_swap_camera: Camera2D = %TimeSwapCamera
 
+var time_locked: bool = false;
+
 var is_time_swapping := false
 var is_climbing := false
 var direction: Vector2: 

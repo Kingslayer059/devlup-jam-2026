@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://des22pakvjiey"]
+
+[ext_resource type="Script" uid="uid://dnqhxuoay4uqj" path="res://scenes/objects/time_zone/time_zone.gd" id="1_xun8b"]
+[ext_resource type="Shader" uid="uid://u3c355upiuf7" path="res://scenes/objects/time_zone/time_zone.gdshader" id="2_7jw5c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1lqrt"]
+resource_local_to_scene = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_zone"]
+shader = ExtResource("2_7jw5c")
+shader_parameter/tint = Color(0.5, 0.8, 1, 0.1)
+shader_parameter/edge_color = Color(0.7, 0.9, 1, 0.5)
+shader_parameter/edge_width = 0.0
+shader_parameter/pulse_speed = 1.5
+shader_parameter/outer_glow = 6.0
+
+[sub_resource type="Gradient" id="Gradient_fade"]
+offsets = PackedFloat32Array(0, 0.2, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1lqrt"]
+shader = ExtResource("2_7jw5c")
+shader_parameter/tint = Color(0.5, 0.8, 1, 0.2)
+shader_parameter/edge_color = Color(0.7, 0.9, 1, 0.8)
+shader_parameter/edge_width = 18.0
+shader_parameter/pulse_speed = 3.0
+
+[node name="TimeZone" type="Area2D" unique_id=2012884424]
+script = ExtResource("1_xun8b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1175480012]
+shape = SubResource("RectangleShape2D_1lqrt")
+
+[node name="ZoneRect" type="ColorRect" parent="." unique_id=1306525817]
+material = SubResource("ShaderMaterial_zone")
+mouse_filter = 2
+
+[node name="Particles" type="CPUParticles2D" parent="." unique_id=554284084]
+amount = 40
+lifetime = 10.0
+emission_shape = 3
+emission_rect_extents = Vector2(10, 10)
+direction = Vector2(0, 1)
+spread = 30.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 1.0
+scale_amount_max = 2.0
+color = Color(0.7, 0.9, 1, 1)
+color_ramp = SubResource("Gradient_fade")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=580140617]
+
+[node name="Shader" type="ColorRect" parent="CanvasLayer" unique_id=700134141]
+visible = false
+material = SubResource("ShaderMaterial_1lqrt")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

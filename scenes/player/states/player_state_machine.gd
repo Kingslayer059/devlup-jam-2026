@@ -15,7 +15,7 @@ func _ready() -> void:
 	Global.change_to_past.connect(stop_climbing)
 
 func _physics_process(_delta: float) -> void:
-	if Input.is_action_pressed("time_swap"):
+	if Input.is_action_pressed("time_swap") && !player.time_locked:
 		player.is_time_swapping = true
 		change_state(time_swap_state)
 	elif !player.is_climbing && !player.is_time_swapping:
