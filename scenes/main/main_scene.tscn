@@ -22,4 +22,7 @@ unique_name_in_owner = true
 stream = SubResource("AudioStreamSynchronized_ei2sf")
 autoplay = true
 
+[node name="AudioStreamPlayerSFX" type="AudioStreamPlayer2D" parent="." unique_id=2063443510]
+unique_name_in_owner = true
+
 [node name="TimeTest" parent="." unique_id=401642050 instance=ExtResource("4_24sno")]
