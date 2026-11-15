@@ -1,0 +1,68 @@
+[gd_scene format=4 uid="uid://cx2guob4u0bwn"]
+
+[ext_resource type="Script" uid="uid://bto5hs3mgu8bm" path="res://scenes/main/main_scene.gd" id="1_g1ckg"]
+[ext_resource type="AudioStream" uid="uid://b6173wfry5vty" path="res://music/jam.mp3" id="2_t7v7a"]
+[ext_resource type="AudioStream" uid="uid://b0k1h7fsxqvin" path="res://music/cornipelago-past-theme.mp3" id="3_xx6b8"]
+[ext_resource type="Script" uid="uid://c87xxjiwwn6q0" path="res://scenes/dummy/time/time_swap.gd" id="4_f62st"]
+[ext_resource type="PackedScene" uid="uid://dtq3ror6kqxks" path="res://scenes/tilemap/main_tile_map.tscn" id="5_w24lh"]
+[ext_resource type="PackedScene" uid="uid://b1clgmxbqdqse" path="res://scenes/tilemap/bridge_tile_map.tscn" id="6_g1ckg"]
+[ext_resource type="PackedScene" uid="uid://d2pdj71x7vy3t" path="res://scenes/player/player.tscn" id="7_tsmbm"]
+[ext_resource type="PackedScene" uid="uid://cpn6k8o051ate" path="res://scenes/ground/key_gate/key_gate.tscn" id="8_4vryo"]
+[ext_resource type="PackedScene" uid="uid://ba5gpwub2laup" path="res://scenes/items/collectible/collectible.tscn" id="8_y3vdi"]
+[ext_resource type="PackedScene" uid="uid://d1qde2eraxkgl" path="res://scenes/items/key/key.tscn" id="9_g1ckg"]
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_2r1tl"]
+stream_count = 2
+stream_0/stream = ExtResource("2_t7v7a")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("3_xx6b8")
+stream_1/volume = 0.0
+
+[node name="Level3" type="Node2D" unique_id=631564884]
+script = ExtResource("1_g1ckg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2087684283]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamSynchronized_2r1tl")
+autoplay = true
+
+[node name="AudioStreamPlayerSFX" type="AudioStreamPlayer2D" parent="." unique_id=2010632993]
+unique_name_in_owner = true
+
+[node name="TimeSwap" type="Node2D" parent="." unique_id=589447521 node_paths=PackedStringArray("past", "present", "past_tileset", "present_tileset")]
+script = ExtResource("4_f62st")
+past = NodePath("Past")
+present = NodePath("Present")
+past_tileset = NodePath("Past/MainTileMapPast")
+present_tileset = NodePath("Present/MainTileMapPresent")
+
+[node name="Past" type="Node2D" parent="TimeSwap" unique_id=1157280643]
+visible = false
+
+[node name="MainTileMapPast" parent="TimeSwap/Past" unique_id=2083922039 instance=ExtResource("5_w24lh")]
+tile_map_data = PackedByteArray("AAAAAAoAAgAAAAAAAAABAAoAAgAAAAAAAAACAAoAAgAAAAAAAAADAAoAAgAAAAAAAAAEAAoAAgAAAAAAAAAFAAoAAgAAAAAAAAAGAAoAAgAAAAAAAAAHAAoAAgAAAAAAAAAIAAoAAgAAAAAAAAAJAAoAAgAAAAAAAAAKAAoAAgAAAAAAAAALAAoAAgAAAAAAAAAMAAoAAgAAAAAAAAANAAoAAgAAAAAAAAAOAAoAAgAAAAAAAAAPAAoAAgADAAAAAAAQAAoAAgAAAAAAAAARAAoAAgAAAAAAAAASAAoAAgAAAAAAAAATAAoAAgAAAAAAAAAUAAoAAgAAAAAAAAAVAAoAAgAAAAAAAAAWAAoAAgAAAAAAAAAXAAoAAgAAAAAAAAAYAAoAAgAAAAAAAAAZAAoAAgAAAAAAAAAkAAoAAgAAAAAAAAAlAAoAAgAAAAAAAAAmAAoAAgAAAAAAAAAnAAoAAgAAAAAAAAA=")
+
+[node name="BridgeTileMap" parent="TimeSwap/Past" unique_id=1233093331 instance=ExtResource("6_g1ckg")]
+tile_map_data = PackedByteArray("AAA8ABMAAAAJAAAAAAA8ABQAAAAEAAAAAAA9ABMAAAAJAAAAAAA9ABQAAAAEAAAAAAA9ABUAAAAGABAAAAA9ABYAAAAGABEAAAA9ABcAAAAGABIAAAA+ABMAAAAJAAAAAAA+ABQAAAAEAAAAAAA+ABUAAAAHABAAAAA+ABYAAAAHABEAAAA/ABMAAAAJAAAAAAA/ABQAAAAEAAAAAABAABMAAAAJAAAAAABAABQAAAAEAAAAAABBABMAAAAJAAAAAABBABQAAAAEAAAAAABCABMAAAAJAAAAAABCABQAAAAEAAAAAABDABMAAAAJAAAAAABDABQAAAAAAAQAAABEABMAAAAJAAAAAABEABQAAAABAAQAAABFABMAAAAJAAAAAABFABQAAAACAAQAAABFABUAAAACAAUAAABGABMAAAAJAAAAAABGABQAAAADAAQAAABGABUAAAADAAUAAABGABYAAAADAAYAAABHABMAAAAJAAAAAABHABQAAAAEAAQAAAA0ABMAAAAJAAAAAAA0ABQAAAAAAAAAAAA0ABUAAAAAAAEAAAA0ABYAAAAAAAIAAAA0ABcAAAAAAAMAAAA1ABMAAAAJAAAAAAA1ABQAAAABAAAAAAA1ABUAAAABAAEAAAA1ABYAAAABAAIAAAA1ABcAAAABAAMAAAA2ABMAAAAJAAAAAAA2ABQAAAACAAAAAAA2ABUAAAACAAEAAAA2ABYAAAACAAIAAAA3ABMAAAAJAAAAAAA3ABQAAAADAAAAAAA3ABUAAAADAAEAAAA4ABMAAAAJAAAAAAA4ABQAAAAEAAAAAAA4ABUAAAAEAAEAAAA5ABMAAAAJAAAAAAA5ABQAAAAEAAAAAAA6ABMAAAAJAAAAAAA6ABQAAAAEAAAAAAA7ABMAAAAJAAAAAAA7ABQAAAAEAAAAAAA+ABcAAAAHABIAAABEABUAAAABAAUAAABHABUAAAAEAAUAAABHABYAAAAEAAYAAABHABcAAAAEAAcAAAA=")
+
+[node name="KeyGate" parent="TimeSwap/Past" unique_id=1522181517 instance=ExtResource("8_4vryo")]
+position = Vector2(398, 259)
+collision_layer = 16
+
+[node name="Present" type="Node2D" parent="TimeSwap" unique_id=130517471]
+
+[node name="MainTileMapPresent" parent="TimeSwap/Present" unique_id=1037921351 instance=ExtResource("5_w24lh")]
+tile_map_data = PackedByteArray("AAATAAoAAgAAAAEAAAASAAoAAgAAAAEAAAARAAoAAgAAAAEAAAAQAAoAAgAAAAEAAAAPAAoAAgAAAAEAAAAOAAoAAgAAAAEAAAANAAoAAgAAAAEAAAAMAAoAAgAAAAEAAAALAAoAAgAAAAEAAAAKAAoAAgAAAAEAAAAJAAoAAgAAAAEAAAAIAAoAAgAAAAEAAAAHAAoAAgAAAAEAAAAGAAoAAgAAAAEAAAAEAAoAAgAAAAEAAAADAAoAAgAAAAEAAAACAAoAAgAAAAEAAAABAAoAAgAAAAEAAAAAAAoAAgABAAEAAAAUAAoAAgAAAAEAAAAVAAoAAgAAAAEAAAAWAAoAAgAAAAEAAAAXAAoAAgAAAAEAAAAYAAoAAgAAAAEAAAAZAAoAAgACAAEAAAAFAAoAAgAAAAEAAAAkAAoAAgAAAAEAAAAlAAoAAgAAAAEAAAAmAAoAAgAAAAEAAAAnAAoAAgACAAEAAAA=")
+collision_enabled = false
+
+[node name="BridgeTileMap" parent="TimeSwap/Present" unique_id=2072685829 instance=ExtResource("6_g1ckg")]
+tile_map_data = PackedByteArray("AAANAAUAAAAAAAAAAAAOAAUAAAAAAAAAAAA0ABQAAAAAAAgAAAA1ABQAAAABAAgAAAA2ABQAAAACAAgAAAA0ABUAAAAAAAkAAAA0ABYAAAAAAAoAAAA1ABUAAAABAAkAAAA1ABYAAAABAAoAAAA2ABUAAAACAAkAAAA2ABYAAAACAAoAAAA3ABQAAAADAAgAAAA3ABUAAAADAAkAAABDABQAAAAAAAwAAABDABUAAAAAAA0AAABEABQAAAABAAwAAABEABUAAAABAA0AAABFABQAAAACAAwAAABFABUAAAACAA0AAABGABQAAAADAAwAAABGABUAAAADAA0AAABHABQAAAAEAAwAAABHABUAAAAEAA0AAABFABYAAAACAA4AAABGABYAAAADAA4AAABGABcAAAADAA8AAABHABYAAAAEAA4AAABHABcAAAAEAA8AAAA=")
+
+[node name="Player" parent="." unique_id=1394662000 instance=ExtResource("7_tsmbm")]
+position = Vector2(40, 301)
+
+[node name="collectible" parent="." unique_id=1021277217 instance=ExtResource("8_y3vdi")]
+position = Vector2(1222, 270)
+
+[node name="Key" parent="." unique_id=1373023930 instance=ExtResource("9_g1ckg")]
+position = Vector2(783, 302)
