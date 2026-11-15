@@ -29,26 +29,26 @@ texture = ExtResource("2_dovo2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1425073731]
 shape = SubResource("RectangleShape2D_gmlin")
 
-[node name="StateMachine" type="Node2D" parent="." unique_id=122383202 node_paths=PackedStringArray("player", "state")]
+[node name="StateMachine" type="Node" parent="." unique_id=122383202 node_paths=PackedStringArray("player", "state")]
 script = ExtResource("3_gmlin")
 player = NodePath("..")
 state = NodePath("Idle")
 
-[node name="Idle" type="Node2D" parent="StateMachine" unique_id=1117918237]
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1117918237]
 unique_name_in_owner = true
 script = ExtResource("5_0owmy")
 
-[node name="Move" type="Node2D" parent="StateMachine" unique_id=757130408 node_paths=PackedStringArray("player")]
+[node name="Move" type="Node" parent="StateMachine" unique_id=757130408 node_paths=PackedStringArray("player")]
 unique_name_in_owner = true
 script = ExtResource("4_75vfm")
 player = NodePath("../..")
 
-[node name="Jump" type="Node2D" parent="StateMachine" unique_id=965520753 node_paths=PackedStringArray("player")]
+[node name="Jump" type="Node" parent="StateMachine" unique_id=965520753 node_paths=PackedStringArray("player")]
 unique_name_in_owner = true
 script = ExtResource("6_qek5x")
 player = NodePath("../..")
 
-[node name="Climb" type="Node2D" parent="StateMachine" unique_id=623513649 node_paths=PackedStringArray("player")]
+[node name="Climb" type="Node" parent="StateMachine" unique_id=623513649 node_paths=PackedStringArray("player")]
 unique_name_in_owner = true
 script = ExtResource("7_0owmy")
 player = NodePath("../..")

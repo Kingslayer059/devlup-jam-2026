@@ -12,16 +12,18 @@ func _ready() -> void:
 	Global.player_climb.connect(on_player_climb)
 
 func _physics_process(_delta: float) -> void:
+	var new_state: State = state;
 	if !player.is_climbing:
 		if Input.is_action_pressed("jump") && player.is_on_floor():
-			change_state(jump_state)
+			new_state = jump_state;
 		elif Input.is_action_pressed("move") || player.velocity != Vector2.ZERO:
-			change_state(move_state)
+			new_state = move_state;
 		else:
-			change_state(idle_state)
-	if player.is_climbing:
-		if Input.is_action_pressed("jump"):
-			change_state(jump_state)
+			new_state = idle_state;
+	elif Input.is_action_pressed("jump"):
+		new_state = jump_state;
+	if (new_state != state):
+		change_state(new_state);
 
 func on_player_climb(climb_position: Vector2) -> void:
 	if player.current_item != null:
