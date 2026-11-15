@@ -1,6 +1,10 @@
 extends ShapedInteractable
 
-@export var plant: Node2D
+@export var vines: Node2D
+@export var maple_tree: Node2D
+@export var pumpkin: Node2D
+
+var plant: Node2D
 
 var seed: Seed
 var planted := false
@@ -8,10 +12,21 @@ var planted := false
 func _ready() -> void:
 	Global.change_to_present.connect(on_change_to_present)
 	Global.change_to_past.connect(on_change_to_past)
-	if plant == null:
-		printerr("No plant assigned")
+	
+	if vines == null:
+		print("No vines assigned")
 	else:
-		plant.process_mode = Node.PROCESS_MODE_DISABLED
+		vines.process_mode = Node.PROCESS_MODE_DISABLED
+	
+	if maple_tree == null:
+		print("No maple_tree assigned")
+	else:
+		maple_tree.process_mode = Node.PROCESS_MODE_DISABLED
+	
+	if pumpkin == null:
+		print("No pumpkin assigned")
+	else:
+		pumpkin.process_mode = Node.PROCESS_MODE_DISABLED
 
 func interact() -> void:
 	if Global.is_present:
@@ -28,6 +43,14 @@ func interact() -> void:
 		add_child(new_seed)
 		seed = new_seed
 		Global.player.current_item = null
+		
+		match seed.plant_type:
+			"vines":
+				plant = vines
+			"maple_tree":
+				plant = maple_tree
+			"pumpkin":
+				plant = pumpkin
 
 func on_change_to_present() -> void:
 	if !planted:

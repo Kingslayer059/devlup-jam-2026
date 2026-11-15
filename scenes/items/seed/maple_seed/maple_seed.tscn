@@ -5,6 +5,7 @@
 
 [node name="MapleSeed" type="Node2D" unique_id=1372728815]
 script = ExtResource("1_u4djm")
+plant_type = "maple_tree"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2010974282]
 texture_filter = 1

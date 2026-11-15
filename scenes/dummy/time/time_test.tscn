@@ -4,8 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://c70btmm5lk4qp" path="res://scenes/dummy/player/dummy_tileset.tscn" id="2_a70p5"]
 [ext_resource type="PackedScene" uid="uid://d2pdj71x7vy3t" path="res://scenes/player/player.tscn" id="3_p40kl"]
 [ext_resource type="PackedScene" uid="uid://ux4khvu53ltx" path="res://scenes/items/seed/corn_seed/corn_seed.tscn" id="3_rqync"]
+[ext_resource type="PackedScene" uid="uid://cthao4xerp2tt" path="res://scenes/items/seed/maple_seed/maple_seed.tscn" id="4_gkqig"]
 [ext_resource type="PackedScene" uid="uid://b0cb8r03b35b7" path="res://scenes/ground/plantable_area/plantable_area.tscn" id="5_72qo5"]
 [ext_resource type="PackedScene" uid="uid://besvux04kyyk6" path="res://scenes/objects/vines/vines.tscn" id="6_oe5iy"]
+[ext_resource type="PackedScene" uid="uid://c8g0xtonhef2u" path="res://scenes/objects/tree/maple_tree.tscn" id="7_qgvl1"]
 
 [node name="TimeTest" type="Node2D" unique_id=401642050 node_paths=PackedStringArray("past", "present", "past_tileset", "present_tileset")]
 script = ExtResource("1_s1qkl")
@@ -26,15 +28,19 @@ collision_enabled = false
 [node name="DummyTileset" parent="Present" unique_id=546704641 instance=ExtResource("2_a70p5")]
 tile_map_data = PackedByteArray("AAAAAAoAAAADAAAAAAABAAoAAAADAAAAAAACAAoAAAADAAAAAAADAAoAAAADAAAAAAAEAAoAAAADAAAAAAAFAAoAAAADAAAAAAAGAAoAAAADAAAAAAAHAAoAAAADAAAAAAAIAAoAAAADAAAAAAAJAAoAAAADAAAAAAAKAAoAAAADAAAAAAALAAoAAAADAAAAAAANAAoAAAADAAAAAAAOAAoAAAADAAAAAAAPAAoAAAADAAAAAAAQAAoAAAADAAAAAAARAAoAAAADAAAAAAASAAoAAAADAAAAAAATAAoAAAADAAAAAAAFAAgAAAADAAAAAAAGAAgAAAADAAAAAAAHAAgAAAADAAAAAAASAAQAAAADAAAAAAARAAQAAAADAAAAAAAQAAQAAAADAAAAAAAPAAQAAAADAAAAAAAMAAoAAAACAAAAAAA=")
 
-[node name="Seed" parent="Present" unique_id=1744408064 instance=ExtResource("3_rqync")]
+[node name="CornSeed" parent="Present" unique_id=1744408064 instance=ExtResource("3_rqync")]
 position = Vector2(612, 309)
+
+[node name="MapleSeed" parent="Present" unique_id=1372728815 instance=ExtResource("4_gkqig")]
+position = Vector2(515, 309)
 
 [node name="Player" parent="." unique_id=1394662000 instance=ExtResource("3_p40kl")]
 position = Vector2(313, 258)
 
-[node name="PlantableArea" parent="." unique_id=950168230 node_paths=PackedStringArray("plant") instance=ExtResource("5_72qo5")]
+[node name="PlantableArea" parent="." unique_id=950168230 node_paths=PackedStringArray("vines", "maple_tree") instance=ExtResource("5_72qo5")]
 position = Vector2(400, 336)
-plant = NodePath("Vine")
+vines = NodePath("Vine")
+maple_tree = NodePath("MapleTree")
 
 [node name="Vine" type="Node2D" parent="PlantableArea" unique_id=411266049]
 visible = false
@@ -42,3 +48,10 @@ visible = false
 [node name="Vines" parent="PlantableArea/Vine" unique_id=1540980208 instance=ExtResource("6_oe5iy")]
 position = Vector2(-16, -16)
 tile_map_data = PackedByteArray("AAAAAP7/AAAAAAAAAwAAAP3/AAAAAAAAAwAAAPz/AAAAAAAAAwAAAPv/AAAAAAAAAwAAAPr/AAAAAAAAAwAAAPj/AAAAAAAAAQAAAPn/AAAAAAAAAwAAAP//AAAAAAAAAgA=")
+
+[node name="MapleTree" type="Node2D" parent="PlantableArea" unique_id=967274235]
+visible = false
+
+[node name="MapleTree" parent="PlantableArea/MapleTree" unique_id=1914182775 instance=ExtResource("7_qgvl1")]
+position = Vector2(16, 16)
+tile_map_data = PackedByteArray("AAD///7/AAAAAAAABAD///3/AAAAAAAAAwD///z/AAAAAAAAAgA=")

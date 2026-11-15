@@ -10,6 +10,7 @@ scenes/3/scene = ExtResource("2_ylhpi")
 scenes/4/scene = ExtResource("3_yiy30")
 
 [sub_resource type="TileSet" id="TileSet_5mkni"]
+tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetScenesCollectionSource_b4nyr")
 
 [node name="MapleTree" type="TileMapLayer" unique_id=1914182775]
