@@ -32,7 +32,7 @@ stream_1/volume = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4r5lo"]
 resource_local_to_scene = true
-size = Vector2(15.720001, 15.533332)
+size = Vector2(378.5, 184.00003)
 
 [node name="Level3" type="Node2D" unique_id=631564884]
 script = ExtResource("1_lsgss")
@@ -280,10 +280,9 @@ position = Vector2(1, -23)
 
 [node name="TimeZone2" parent="." unique_id=1690314695 instance=ExtResource("22_4r5lo")]
 position = Vector2(-463, -50.000008)
-scale = Vector2(25, 15)
 
 [node name="CollisionShape2D" parent="TimeZone2" index="0" unique_id=1175480012]
-position = Vector2(1.3200006, -0.39999938)
+position = Vector2(32.75, 14.000008)
 scale = Vector2(1, 0.99999994)
 shape = SubResource("RectangleShape2D_4r5lo")
 
