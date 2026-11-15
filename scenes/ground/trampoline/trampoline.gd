@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var bounce_power := 200
-@export var max_launch := 1200
+@export var max_launch := 300
 
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 
