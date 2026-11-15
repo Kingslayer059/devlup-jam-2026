@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*uid://odyrnbpqrxkc"
+GameManager="*uid://nklex36pjurk"
 
 [debug]
 
