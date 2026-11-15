@@ -3,6 +3,9 @@ extends ShapedInteractable
 @export var vines: Node2D
 @export var maple_tree: Node2D
 @export var pumpkin: Node2D
+@onready var audio_stream_player_sfx: AudioStreamPlayer2D = %AudioStreamPlayerSFX
+@onready var plant_sound: AudioStream = preload("res://sfx/plant.mp3")
+
 
 var plant: Node2D
 
@@ -51,6 +54,8 @@ func interact() -> void:
 				plant = maple_tree
 			"pumpkin":
 				plant = pumpkin
+		audio_stream_player_sfx.stream = plant_sound
+		audio_stream_player_sfx.play()
 
 func on_change_to_present() -> void:
 	if !planted:

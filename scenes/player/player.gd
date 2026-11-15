@@ -14,6 +14,7 @@ extends CharacterBody2D
 @onready var audio_stream_player_sfx: AudioStreamPlayer2D = %PlayerAudioStreamPlayerSFX
 @onready var clock_forward: AudioStream = preload("res://sfx/clockforwardnopitch.mp3")
 @onready var clock_backward: AudioStream = preload("res://sfx/clockbackwardnopitch.mp3")
+@onready var plant: AudioStream = preload("res://sfx/plant.mp3")
 
 var time_locked: bool = false;
 
@@ -71,6 +72,9 @@ func on_player_carry(item: Item, scene: PackedScene) -> void:
 	add_child(new_item)
 	new_item.position = Vector2(0, -20)
 	current_item = new_item
+	
+	audio_stream_player_sfx.stream = plant
+	audio_stream_player_sfx.play()
 	
 func _on_time_swap_initiated() -> void:
 	if Global.is_present:
