@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://clo51nqecynl6"]
+[gd_scene format=3 uid="uid://clo51nqecynl6"]
 
 [ext_resource type="Texture2D" uid="uid://beq206x31tv12" path="res://scenes/tilemap/pastr_sheet.png" id="1_m06c4"]
 [ext_resource type="Texture2D" uid="uid://64bfuqqho0kn" path="res://scenes/tilemap/present_sheet.png" id="2_5yjoq"]
@@ -939,5 +939,4 @@ sources/0 = SubResource("TileSetAtlasSource_216ie")
 sources/1 = SubResource("TileSetAtlasSource_rmsu6")
 
 [node name="BackgroundTilemap" type="TileMapLayer" unique_id=899568984]
-tile_map_data = PackedByteArray("AAADABIAAAAAAAEAAAALABIAAAAAAAEAAAATABIAAAAAAAEAAAAbABAAAAAAAAEAAAAjABAAAAAAAAEAAAAjAAkAAAAAAAAAAAAbAAkAAAAAAAAAAAAjAAIAAAABAAAAAAAbAAIAAAABAAAAAAA=")
 tile_set = SubResource("TileSet_27sdg")
