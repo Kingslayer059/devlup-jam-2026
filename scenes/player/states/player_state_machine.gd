@@ -19,9 +19,8 @@ func _physics_process(_delta: float) -> void:
 			change_state(move_state)
 		else:
 			change_state(idle_state)
-	if player.is_climbing:
-		if Input.is_action_pressed("jump"):
-			change_state(jump_state)
+	elif Input.is_action_pressed("jump"):
+		change_state(jump_state)
 
 func on_player_climb(climb_position: Vector2) -> void:
 	if player.current_item != null:
