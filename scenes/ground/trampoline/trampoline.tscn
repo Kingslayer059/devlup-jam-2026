@@ -23,7 +23,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_extrf"]
 resource_name = "trampoline"
-length = 0.39999999999999997
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -57,4 +57,5 @@ position = Vector2(-0.5, -9)
 shape = SubResource("RectangleShape2D_4s05n")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1072851860]
+unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_mxgc6")
