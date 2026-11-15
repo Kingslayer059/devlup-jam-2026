@@ -181,6 +181,15 @@ process_callback = 0
 wait_time = 1.5
 one_shot = true
 
+[node name="TimeSwapCamera" type="Camera2D" parent="StateMachine/TimeSwap" unique_id=1852412090]
+unique_name_in_owner = true
+zoom = Vector2(1.25, 1.25)
+limit_left = -6
+limit_top = -3
+limit_right = 640
+limit_bottom = 351
+editor_draw_limits = true
+
 [node name="Interact" type="Area2D" parent="." unique_id=1603593541]
 unique_name_in_owner = true
 position = Vector2(16, 0)
@@ -203,5 +212,5 @@ shape = SubResource("RectangleShape2D_q1c3b")
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_ugbui")
 
-[node name="TimeSwapCamera" type="Camera2D" parent="." unique_id=1852412090]
-unique_name_in_owner = true
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="." unique_id=705344236]
+remote_path = NodePath("../StateMachine/TimeSwap/TimeSwapCamera")
