@@ -7,7 +7,6 @@
 [ext_resource type="AudioStream" uid="uid://b0k1h7fsxqvin" path="res://music/cornipelago-past-theme.mp3" id="3_1seuy"]
 [ext_resource type="PackedScene" uid="uid://d2pdj71x7vy3t" path="res://scenes/player/player.tscn" id="6_1seuy"]
 [ext_resource type="PackedScene" uid="uid://ba5gpwub2laup" path="res://scenes/items/collectible/collectible.tscn" id="7_2r1tl"]
-[ext_resource type="PackedScene" uid="uid://des22pakvjiey" path="res://scenes/objects/time_zone/time_zone.tscn" id="8_8a7m2"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_cicjy"]
 stream_count = 2
@@ -15,10 +14,6 @@ stream_0/stream = ExtResource("2_dywbp")
 stream_0/volume = 0.0
 stream_1/stream = ExtResource("3_1seuy")
 stream_1/volume = 0.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8a7m2"]
-resource_local_to_scene = true
-size = Vector2(182, 96)
 
 [node name="Level1" type="Node2D" unique_id=631564884]
 script = ExtResource("1_dd0lh")
@@ -62,12 +57,4 @@ limit_bottom = 353
 [node name="collectible" parent="." unique_id=1021277217 instance=ExtResource("7_2r1tl")]
 position = Vector2(557, 57)
 
-[node name="TimeZone" parent="." unique_id=2012884424 instance=ExtResource("8_8a7m2")]
-position = Vector2(284, 289)
-
-[node name="CollisionShape2D" parent="TimeZone" index="0" unique_id=1175480012]
-position = Vector2(40.5, -18.5)
-shape = SubResource("RectangleShape2D_8a7m2")
-
 [editable path="Player"]
-[editable path="TimeZone"]
