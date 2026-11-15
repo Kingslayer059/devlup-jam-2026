@@ -29,8 +29,6 @@ func _physics_process(_delta: float) -> void:
 		change_state(jump_state)
 	
 func on_player_climb(climb_position: Vector2) -> void:
-	if player.current_item != null:
-		return
 	player.is_climbing = true
 	player.current_climb_position = climb_position
 	change_state(climb_state)
