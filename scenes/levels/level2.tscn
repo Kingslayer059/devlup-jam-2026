@@ -54,5 +54,12 @@ collision_enabled = false
 position = Vector2(40, 301)
 collision_mask = 22
 
+[node name="TimeSwapCamera" parent="Player/StateMachine/TimeSwap" parent_id_path=PackedInt32Array(1394662000, 1411867919) index="1" unique_id=1852412090]
+position = Vector2(40, 301)
+limit_left = 0
+limit_right = 958
+
 [node name="collectible" parent="." unique_id=1021277217 instance=ExtResource("7_hgky1")]
 position = Vector2(744, 265)
+
+[editable path="Player"]

@@ -55,6 +55,13 @@ position = Vector2(751, 301)
 position = Vector2(40, 301)
 collision_mask = 22
 
+[node name="TimeSwapCamera" parent="Player/StateMachine/TimeSwap" parent_id_path=PackedInt32Array(1394662000, 1411867919) index="1" unique_id=1852412090]
+position = Vector2(40, 301)
+limit_left = 0
+limit_top = -215
+limit_right = 962
+limit_bottom = 350
+
 [node name="collectible" parent="." unique_id=1021277217 instance=ExtResource("8_a82vw")]
 position = Vector2(602, 32)
 
@@ -69,3 +76,5 @@ position = Vector2(-57, -48)
 [node name="Vines" parent="PlantableArea/Vines" unique_id=1540980208 instance=ExtResource("10_hadiw")]
 position = Vector2(41, 32)
 tile_map_data = PackedByteArray("AAAAAP//AAAAAAAAAgAAAP7/AAAAAAAAAwAAAP3/AAAAAAAAAwAAAPz/AAAAAAAAAwAAAPv/AAAAAAAAAwAAAPr/AAAAAAAAAwAAAPn/AAAAAAAAAwAAAPj/AAAAAAAAAwAAAPf/AAAAAAAAAwAAAPX/AAAAAAAAAQAAAPb/AAAAAAAAAwA=")
+
+[editable path="Player"]
