@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dtq3ror6kqxks" path="res://scenes/tilemap/main_tile_map.tscn" id="5_wb0vq"]
 [ext_resource type="PackedScene" uid="uid://b0cb8r03b35b7" path="res://scenes/ground/plantable_area/plantable_area.tscn" id="6_7eb4w"]
 [ext_resource type="PackedScene" uid="uid://d2pdj71x7vy3t" path="res://scenes/player/player.tscn" id="7_522sc"]
-[ext_resource type="PackedScene" uid="uid://ux4khvu53ltx" path="res://scenes/items/seed/seed.tscn" id="7_hadiw"]
+[ext_resource type="PackedScene" uid="uid://ux4khvu53ltx" path="res://scenes/items/seed/corn_seed/corn_seed.tscn" id="7_hadiw"]
 [ext_resource type="PackedScene" uid="uid://ba5gpwub2laup" path="res://scenes/items/collectible/collectible.tscn" id="8_a82vw"]
 [ext_resource type="PackedScene" uid="uid://besvux04kyyk6" path="res://scenes/objects/vines/vines.tscn" id="10_hadiw"]
 
