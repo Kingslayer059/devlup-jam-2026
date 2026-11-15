@@ -56,6 +56,7 @@ player = NodePath("../..")
 [node name="Interact" type="Area2D" parent="." unique_id=1603593541]
 unique_name_in_owner = true
 position = Vector2(16, 0)
+collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interact" unique_id=1462782512]
@@ -63,6 +64,7 @@ shape = SubResource("CircleShape2D_q1c3b")
 
 [node name="Climbing" type="Area2D" parent="." unique_id=1136602529]
 unique_name_in_owner = true
+collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Climbing" unique_id=334091391]
