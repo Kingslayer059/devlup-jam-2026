@@ -6,12 +6,16 @@
 [ext_resource type="Script" uid="uid://c603ieicmtcs" path="res://scenes/player/states/player_move.gd" id="4_75vfm"]
 [ext_resource type="Script" uid="uid://dya28vu3i3l64" path="res://scenes/player/states/player_idle.gd" id="5_0owmy"]
 [ext_resource type="Script" uid="uid://dbmi2pvocqlfy" path="res://scenes/player/states/player_jump.gd" id="6_qek5x"]
+[ext_resource type="Script" uid="uid://dhtoedh53pg4q" path="res://scenes/player/states/player_climb.gd" id="7_0owmy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gmlin"]
 size = Vector2(32, 32)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q1c3b"]
 radius = 23.021729
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1c3b"]
+size = Vector2(32, 20)
 
 [node name="Player" type="CharacterBody2D" unique_id=1394662000]
 z_index = 1
@@ -25,29 +29,44 @@ texture = ExtResource("2_dovo2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1425073731]
 shape = SubResource("RectangleShape2D_gmlin")
 
-[node name="StateMachine" type="Node2D" parent="." unique_id=122383202 node_paths=PackedStringArray("player", "state")]
+[node name="StateMachine" type="Node" parent="." unique_id=122383202 node_paths=PackedStringArray("player", "state")]
 script = ExtResource("3_gmlin")
 player = NodePath("..")
 state = NodePath("Idle")
 
-[node name="Idle" type="Node2D" parent="StateMachine" unique_id=1117918237]
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1117918237]
 unique_name_in_owner = true
 script = ExtResource("5_0owmy")
 
-[node name="Move" type="Node2D" parent="StateMachine" unique_id=757130408 node_paths=PackedStringArray("player")]
+[node name="Move" type="Node" parent="StateMachine" unique_id=757130408 node_paths=PackedStringArray("player")]
 unique_name_in_owner = true
 script = ExtResource("4_75vfm")
 player = NodePath("../..")
 
-[node name="Jump" type="Node2D" parent="StateMachine" unique_id=965520753 node_paths=PackedStringArray("player")]
+[node name="Jump" type="Node" parent="StateMachine" unique_id=965520753 node_paths=PackedStringArray("player")]
 unique_name_in_owner = true
 script = ExtResource("6_qek5x")
+player = NodePath("../..")
+
+[node name="Climb" type="Node" parent="StateMachine" unique_id=623513649 node_paths=PackedStringArray("player")]
+unique_name_in_owner = true
+script = ExtResource("7_0owmy")
 player = NodePath("../..")
 
 [node name="Interact" type="Area2D" parent="." unique_id=1603593541]
 unique_name_in_owner = true
 position = Vector2(16, 0)
+collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interact" unique_id=1462782512]
 shape = SubResource("CircleShape2D_q1c3b")
+
+[node name="Climbing" type="Area2D" parent="." unique_id=1136602529]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Climbing" unique_id=334091391]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_q1c3b")
