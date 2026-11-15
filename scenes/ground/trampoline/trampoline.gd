@@ -6,13 +6,10 @@ extends Area2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	body_entered.connect(on_player_touch)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 	
 func on_player_touch(body: Node2D) -> void:
+	if !Global.is_present:
+		return
 	if body is Player:
 		var player := body as Player
 		print("Player velocity: ", player.velocity.y)
