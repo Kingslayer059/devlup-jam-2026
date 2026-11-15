@@ -1,3 +1,23 @@
 [gd_scene format=3 uid="uid://dcjeym8546buy"]
 
+[ext_resource type="Script" uid="uid://bto5hs3mgu8bm" path="res://scenes/main/main_scene.gd" id="1_dv3lr"]
+[ext_resource type="AudioStream" uid="uid://dlrmb5qax4kap" path="res://music/jam.mp3" id="2_ubvhi"]
+[ext_resource type="AudioStream" uid="uid://0kwehhn1d8ct" path="res://music/cornipelago-past-theme.mp3" id="3_24sno"]
+[ext_resource type="PackedScene" uid="uid://bhofjcttjuwsf" path="res://scenes/dummy/time/time_test.tscn" id="4_24sno"]
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_s7l2u"]
+stream_count = 2
+stream_0/stream = ExtResource("2_ubvhi")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("3_24sno")
+stream_1/volume = 0.0
+
 [node name="MainScene" type="Node2D" unique_id=1525853621]
+script = ExtResource("1_dv3lr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1939053006]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamSynchronized_s7l2u")
+autoplay = true
+
+[node name="TimeTest" parent="." unique_id=401642050 instance=ExtResource("4_24sno")]
