@@ -2,7 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://v6pwvwejsuer" path="res://scenes/objects/tree/tree_middle.png" id="1_mj5j8"]
 
-[node name="MapleTreeMiddle" type="Sprite2D" unique_id=744109072]
+[node name="MapleTreeMiddle" type="Node2D" unique_id=236328037]
 texture_filter = 1
-position = Vector2(23.5, -24)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1564653752]
+position = Vector2(23.5, -16)
 texture = ExtResource("1_mj5j8")

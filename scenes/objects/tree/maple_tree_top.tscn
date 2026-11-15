@@ -3,14 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://bobcfq4qpa45h" path="res://scenes/objects/tree/tree_top.png" id="1_eii0h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1c3b"]
-size = Vector2(44, 20)
+size = Vector2(95, 35)
 
 [node name="MapleTreeTop" type="Area2D" unique_id=802021078]
 texture_filter = 1
 
 [node name="TreeTop" type="Sprite2D" parent="." unique_id=554023574]
-position = Vector2(-31.5, -13)
+position = Vector2(-64, -29)
 texture = ExtResource("1_eii0h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1429366416]
+position = Vector2(0.5, -1.5)
 shape = SubResource("RectangleShape2D_q1c3b")
