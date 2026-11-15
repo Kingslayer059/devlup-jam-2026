@@ -1,18 +1,10 @@
 [gd_scene format=3 uid="uid://dsqysqjhjoosd"]
 
-[ext_resource type="Texture2D" uid="uid://cohm13rwmi6ld" path="res://scenes/objects/tree/tree.png" id="1_mj5j8"]
+[ext_resource type="Texture2D" uid="uid://v6pwvwejsuer" path="res://scenes/objects/tree/tree_middle.png" id="1_mj5j8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1c3b"]
-
-[node name="MapleTreeMiddle" type="Area2D" unique_id=802021078]
+[node name="MapleTreeMiddle" type="Node2D" unique_id=236328037]
 texture_filter = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2145410831]
-position = Vector2(-2, -9)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1564653752]
+position = Vector2(23.5, -16)
 texture = ExtResource("1_mj5j8")
-hframes = 5
-vframes = 2
-frame = 6
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1429366416]
-shape = SubResource("RectangleShape2D_q1c3b")
