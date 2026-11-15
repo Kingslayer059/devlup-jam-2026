@@ -8,6 +8,8 @@ extends CharacterBody2D
 @onready var interact: Area2D = %Interact
 @onready var reach: CollisionShape2D = $Interact/CollisionShape2D
 @onready var climbing: Area2D = %Climbing
+@onready var animation_player: AnimationPlayer = %AnimationPlayer
+@onready var sprite: Sprite2D = %Sprite2D
 
 var is_climbing := false
 var direction: Vector2: 

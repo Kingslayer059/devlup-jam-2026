@@ -10,6 +10,7 @@ extends StateMachine
 func _ready() -> void:
 	change_state(state)
 	Global.player_climb.connect(on_player_climb)
+	Global.change_to_past.connect(stop_climbing)
 
 func _physics_process(_delta: float) -> void:
 	if !player.is_climbing:
@@ -28,3 +29,6 @@ func on_player_climb(climb_position: Vector2) -> void:
 	player.is_climbing = true
 	player.current_climb_position = climb_position
 	change_state(climb_state)
+
+func stop_climbing() -> void:
+	change_state(move_state)

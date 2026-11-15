@@ -15,7 +15,7 @@ func _physics_process(_delta: float) -> void:
 	if !areas.size():
 		if player.direction == Vector2.UP:
 			player.direction = Vector2.ZERO
-		
+	
 	
 	player.velocity.y = player.direction.y * player.speed
 
