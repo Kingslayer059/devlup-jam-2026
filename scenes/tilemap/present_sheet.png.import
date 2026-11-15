@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6ki3x24nwvb6"
-path="res://.godot/imported/platforms_sheet.png-e5176e796061b86c6d66f1b84b5077b3.ctex"
+uid="uid://64bfuqqho0kn"
+path="res://.godot/imported/present_sheet.png-8270be915c8c8ce743fee9a9d0881969.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://platforms_sheet.png"
-dest_files=["res://.godot/imported/platforms_sheet.png-e5176e796061b86c6d66f1b84b5077b3.ctex"]
+source_file="res://scenes/tilemap/present_sheet.png"
+dest_files=["res://.godot/imported/present_sheet.png-8270be915c8c8ce743fee9a9d0881969.ctex"]
 
 [params]
 

@@ -41,7 +41,7 @@ project/assembly_name="DevLUpJam2026"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 
