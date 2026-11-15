@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bto5hs3mgu8bm" path="res://scenes/main/main_scene.gd" id="1_dd0lh"]
 [ext_resource type="PackedScene" uid="uid://dtq3ror6kqxks" path="res://scenes/tilemap/main_tile_map.tscn" id="1_x6ivy"]
 [ext_resource type="Script" uid="uid://c87xxjiwwn6q0" path="res://scenes/dummy/time/time_swap.gd" id="2_bfxgj"]
-[ext_resource type="AudioStream" uid="uid://dlrmb5qax4kap" path="res://music/jam.mp3" id="2_dywbp"]
-[ext_resource type="AudioStream" uid="uid://0kwehhn1d8ct" path="res://music/cornipelago-past-theme.mp3" id="3_1seuy"]
+[ext_resource type="AudioStream" uid="uid://b6173wfry5vty" path="res://music/jam.mp3" id="2_dywbp"]
+[ext_resource type="AudioStream" uid="uid://b0k1h7fsxqvin" path="res://music/cornipelago-past-theme.mp3" id="3_1seuy"]
 [ext_resource type="PackedScene" uid="uid://d2pdj71x7vy3t" path="res://scenes/player/player.tscn" id="6_1seuy"]
 [ext_resource type="PackedScene" uid="uid://ba5gpwub2laup" path="res://scenes/items/collectible/collectible.tscn" id="7_2r1tl"]
 
@@ -22,6 +22,9 @@ script = ExtResource("1_dd0lh")
 unique_name_in_owner = true
 stream = SubResource("AudioStreamSynchronized_2r1tl")
 autoplay = true
+
+[node name="AudioStreamPlayerSFX" type="AudioStreamPlayer2D" parent="." unique_id=581108965]
+unique_name_in_owner = true
 
 [node name="TimeSwap" type="Node2D" parent="." unique_id=589447521 node_paths=PackedStringArray("past", "present", "past_tileset", "present_tileset")]
 script = ExtResource("2_bfxgj")
