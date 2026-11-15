@@ -94,6 +94,7 @@ climb_down={
 2d_physics/layer_2="Ground"
 2d_physics/layer_3="Interactable"
 2d_physics/layer_4="TimeLink"
+2d_physics/layer_5="Gate"
 
 [physics]
 
