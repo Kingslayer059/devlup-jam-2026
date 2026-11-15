@@ -7,7 +7,8 @@
 radius = 13.393634
 height = 67.82271
 
-[node name="collectible" type="Area2D" unique_id=1021277217]
+[node name="Collectible" type="Area2D" unique_id=1021277217]
+texture_filter = 1
 script = ExtResource("1_s1wki")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1062231002]

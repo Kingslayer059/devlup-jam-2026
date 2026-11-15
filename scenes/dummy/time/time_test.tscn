@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d2pdj71x7vy3t" path="res://scenes/player/player.tscn" id="3_p40kl"]
 [ext_resource type="PackedScene" uid="uid://ux4khvu53ltx" path="res://scenes/items/seed/seed.tscn" id="3_rqync"]
 [ext_resource type="PackedScene" uid="uid://b0cb8r03b35b7" path="res://scenes/ground/plantable_area/plantable_area.tscn" id="5_72qo5"]
-[ext_resource type="PackedScene" uid="uid://c6lxojqstrfj6" path="res://scenes/objects/vines/vines.tscn" id="6_oe5iy"]
+[ext_resource type="PackedScene" uid="uid://besvux04kyyk6" path="res://scenes/objects/vines/vines.tscn" id="6_oe5iy"]
 
 [node name="TimeTest" type="Node2D" unique_id=401642050 node_paths=PackedStringArray("past", "present", "past_tileset", "present_tileset")]
 script = ExtResource("1_s1qkl")
@@ -39,11 +39,6 @@ plant = NodePath("Vine")
 [node name="Vine" type="Node2D" parent="PlantableArea" unique_id=411266049]
 visible = false
 
-[node name="Vines" parent="PlantableArea/Vine" unique_id=2127513875 instance=ExtResource("6_oe5iy")]
-position = Vector2(0, -48)
-
-[node name="Vines2" parent="PlantableArea/Vine" unique_id=954466864 instance=ExtResource("6_oe5iy")]
-position = Vector2(0, -112)
-
-[node name="Vines3" parent="PlantableArea/Vine" unique_id=151971327 instance=ExtResource("6_oe5iy")]
-position = Vector2(0, -176)
+[node name="Vines" parent="PlantableArea/Vine" unique_id=1540980208 instance=ExtResource("6_oe5iy")]
+position = Vector2(-16, -16)
+tile_map_data = PackedByteArray("AAAAAP7/AAAAAAAAAwAAAP3/AAAAAAAAAwAAAPz/AAAAAAAAAwAAAPv/AAAAAAAAAwAAAPr/AAAAAAAAAwAAAPj/AAAAAAAAAQAAAPn/AAAAAAAAAwAAAP//AAAAAAAAAgA=")
