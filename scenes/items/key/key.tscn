@@ -4,7 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://c1k78spucme0s" path="res://scenes/items/key/key.png" id="1_vvla1"]
 
 [node name="Key" type="Node2D" unique_id=1373023930]
+texture_filter = 1
 script = ExtResource("1_8eq06")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1203989811]
+position = Vector2(0.5, -1)
 texture = ExtResource("1_vvla1")

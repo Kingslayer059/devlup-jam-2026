@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ux4khvu53ltx"]
 
 [ext_resource type="Script" uid="uid://befe0sa32m2f2" path="res://scenes/items/seed/seed.gd" id="1_yhatw"]
-[ext_resource type="Texture2D" uid="uid://dynupeqduore5" path="res://scenes/items/seed/seed.png" id="2_8eyoe"]
+[ext_resource type="Texture2D" uid="uid://c3pd1mht8xke1" path="res://scenes/items/seed/corn_seed.png" id="2_8eyoe"]
 
 [node name="Seed" type="Node2D" unique_id=1372728815]
 script = ExtResource("1_yhatw")
