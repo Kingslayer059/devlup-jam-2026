@@ -39,6 +39,10 @@ window/stretch/aspect="expand"
 
 project/assembly_name="DevLUpJam2026"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
+
 [input]
 
 move={
