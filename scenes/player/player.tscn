@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://dhtoedh53pg4q" path="res://scenes/player/states/player_climb.gd" id="7_0owmy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gmlin"]
-size = Vector2(32, 32)
+size = Vector2(16, 30)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q1c3b"]
 radius = 23.021729
@@ -34,7 +34,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_5gtgg"]
 resource_name = "climb"
-length = 0.56666666
+length = 0.26666668
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -43,7 +43,7 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.26666668),
+"times": PackedFloat32Array(0, 0.13333334),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [18, 19]
@@ -131,6 +131,9 @@ z_index = 1
 texture_filter = 1
 collision_mask = 6
 script = ExtResource("1_8afob")
+speed = 200
+jump_speed = 200
+gravity = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=203436984]
 unique_name_in_owner = true

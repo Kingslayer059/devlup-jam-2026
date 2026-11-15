@@ -14,4 +14,7 @@ func _physics_process(_delta: float) -> void:
 		player.animation_player.play("run")
 		player.sprite.flip_h = true
 	
+	if player.velocity.y > 0:
+		player.animation_player.play("fall")
+	
 	player.velocity.x = player.direction.x * player.speed

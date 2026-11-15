@@ -8,14 +8,18 @@ func _physics_process(_delta: float) -> void:
 	
 	if Input.is_action_pressed("climb_up"):
 		player.direction = Vector2.UP
+		player.animation_player.play("climb")
 	if Input.is_action_pressed("climb_down"):
 		player.direction = Vector2.DOWN
+		player.animation_player.play_backwards("climb")
+	
+	if player.direction == Vector2.ZERO:
+		player.animation_player.pause()
 	
 	var areas := player.climbing.get_overlapping_areas()
 	if !areas.size():
 		if player.direction == Vector2.UP:
 			player.direction = Vector2.ZERO
-	
 	
 	player.velocity.y = player.direction.y * player.speed
 
