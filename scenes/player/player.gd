@@ -6,9 +6,9 @@ extends CharacterBody2D
 @export var gravity := 60
 
 @onready var interact: Area2D = %Interact
+@onready var reach: CollisionShape2D = $Interact/CollisionShape2D
 @onready var climbing: Area2D = %Climbing
 
-var is_carrying := false
 var is_climbing := false
 var direction: Vector2: 
 	set(_direction):
@@ -24,7 +24,6 @@ var current_climb_position: Vector2
 func _ready() -> void:
 	Global.player = self
 	Global.player_carry.connect(on_player_carry)
-	Global.player_plant.connect(on_player_plant)
 
 func _physics_process(_delta: float) -> void:
 	if !is_on_floor() && !is_climbing:
@@ -40,31 +39,25 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("climb_up") && !is_climbing:
 		var areas := interact.get_overlapping_areas()
 		if areas.size() > 0:
-			for area in areas:
+			for area: Node in areas:
 				if area is Vines:
 					var interactable: Vines = area as Vines
 					interactable.interact()
 	
 	if Input.is_action_just_pressed("interact"):
-		var areas := interact.get_overlapping_areas()
-		if areas.size() > 0:
-			for area in areas:
-				if area is Interactable && area is not Vines:
-					var interactable: Interactable = area as Interactable
-					interactable.interact()
+		for item: Interactable in get_tree().get_nodes_in_group("interactables"):
+			if (!item.is_visible_in_tree() || is_ancestor_of(item) || !item.is_in_reach(self)):
+				continue;
+			item.interact();
+			break;
 	
 
 func on_player_carry(item: Item, scene: PackedScene) -> void:
-	if is_carrying:
-		return
-	is_carrying = true
+	if current_item != null:
+		return;
 	item.queue_free()
-	get_node(item.get_path())
 
 	var new_item: Item = scene.instantiate()
 	add_child(new_item)
 	new_item.position = Vector2(0, -20)
 	current_item = new_item
-
-func on_player_plant() -> void:
-	is_carrying = false

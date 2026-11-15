@@ -1,5 +1,5 @@
 class_name Collectible
-extends Item
+extends Area2D
 
 var collected : bool
 
