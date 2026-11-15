@@ -10,7 +10,9 @@ extends CharacterBody2D
 @onready var climbing: Area2D = %Climbing
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 @onready var sprite: Sprite2D = %Sprite2D
+@onready var time_swap_camera: Camera2D = %TimeSwapCamera
 
+var is_time_swapping := false
 var is_climbing := false
 var direction: Vector2: 
 	set(_direction):
@@ -28,7 +30,7 @@ func _ready() -> void:
 	Global.player_carry.connect(on_player_carry)
 
 func _physics_process(_delta: float) -> void:
-	if !is_on_floor() && !is_climbing:
+	if !is_on_floor() && !is_climbing && !is_time_swapping:
 		velocity.y += gravity
 	
 	move_and_slide()

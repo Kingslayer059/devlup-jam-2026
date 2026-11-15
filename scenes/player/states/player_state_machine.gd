@@ -6,23 +6,28 @@ extends StateMachine
 @onready var move_state: State = %Move
 @onready var jump_state: State = %Jump
 @onready var climb_state: State = %Climb
+@onready var time_swap_state: State = %TimeSwap
 
 func _ready() -> void:
 	change_state(state)
+	time_swap_state.state_finished.connect(on_time_swap_state_finished)
 	Global.player_climb.connect(on_player_climb)
 	Global.change_to_past.connect(stop_climbing)
 
 func _physics_process(_delta: float) -> void:
-	if !player.is_climbing:
+	if Input.is_action_pressed("time_swap"):
+		player.is_time_swapping = true
+		change_state(time_swap_state)
+	elif !player.is_climbing && !player.is_time_swapping:
 		if Input.is_action_pressed("jump") && player.is_on_floor():
 			change_state(jump_state)
 		elif Input.is_action_pressed("move") || player.velocity != Vector2.ZERO:
 			change_state(move_state)
 		else:
 			change_state(idle_state)
-	elif Input.is_action_pressed("jump"):
+	elif Input.is_action_pressed("jump") && !player.is_time_swapping:
 		change_state(jump_state)
-
+	
 func on_player_climb(climb_position: Vector2) -> void:
 	if player.current_item != null:
 		return
@@ -32,3 +37,6 @@ func on_player_climb(climb_position: Vector2) -> void:
 
 func stop_climbing() -> void:
 	change_state(move_state)
+
+func on_time_swap_state_finished() -> void:
+	change_state(idle_state)

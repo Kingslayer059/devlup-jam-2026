@@ -56,7 +56,5 @@ collision_enabled = false
 [node name="Player" parent="." unique_id=1394662000 instance=ExtResource("6_1seuy")]
 position = Vector2(40, 301)
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=803410758]
-
 [node name="collectible" parent="." unique_id=1021277217 instance=ExtResource("7_2r1tl")]
 position = Vector2(557, 57)

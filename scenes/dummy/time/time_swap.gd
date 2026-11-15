@@ -8,30 +8,26 @@ extends Node2D
 
 func _ready() -> void:
 	Global.is_present = true
-	
-func _process(delta: float) -> void:
-	pass
+	Global.time_swap_finished.connect(on_time_swap)
 
-func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("time_swap"): 
-		Global.time_swap_initiated.emit() 			## required for audio swap
-		if present.is_visible_in_tree():
-			past.visible = true
-			past_tileset.collision_enabled = true
-			
-			present.visible = false
-			present_tileset.collision_enabled = false
-			
-			Global.is_present = false
-			Global.change_to_past.emit()
-			Global.player.set_collision_mask_value(5, true)
-		elif past.is_visible_in_tree():
-			present.visible = true
-			present_tileset.collision_enabled = true
-			
-			past.visible = false
-			past_tileset.collision_enabled = false
-			
-			Global.is_present = true
-			Global.change_to_present.emit()
-			Global.player.set_collision_mask_value(5, false)
+func on_time_swap() -> void:
+	if present.is_visible_in_tree():
+		past.visible = true
+		past_tileset.collision_enabled = true
+		
+		present.visible = false
+		present_tileset.collision_enabled = false
+		
+		Global.is_present = false
+		Global.change_to_past.emit()
+		Global.player.set_collision_mask_value(5, true)
+	elif past.is_visible_in_tree():
+		present.visible = true
+		present_tileset.collision_enabled = true
+		
+		past.visible = false
+		past_tileset.collision_enabled = false
+		
+		Global.is_present = true
+		Global.change_to_present.emit()
+		Global.player.set_collision_mask_value(5, false)
