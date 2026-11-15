@@ -20,7 +20,7 @@ stream_0/volume = 0.0
 stream_1/stream = ExtResource("3_xx6b8")
 stream_1/volume = 0.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f62st"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xx6b8"]
 resource_local_to_scene = true
 size = Vector2(864, 295)
 
@@ -43,6 +43,7 @@ past_tileset = NodePath("Past/MainTileMapPast")
 present_tileset = NodePath("Present/MainTileMapPresent")
 
 [node name="Past" type="Node2D" parent="TimeSwap" unique_id=1157280643]
+visible = false
 
 [node name="MainTileMapPast" parent="TimeSwap/Past" unique_id=2083922039 instance=ExtResource("5_w24lh")]
 tile_map_data = PackedByteArray("AAAAAAoAAgAAAAAAAAABAAoAAgAAAAAAAAACAAoAAgAAAAAAAAADAAoAAgAAAAAAAAAEAAoAAgAAAAAAAAAFAAoAAgAAAAAAAAAGAAoAAgAAAAAAAAAHAAoAAgAAAAAAAAAIAAoAAgAAAAAAAAAJAAoAAgAAAAAAAAAKAAoAAgAAAAAAAAALAAoAAgAAAAAAAAAMAAoAAgAAAAAAAAANAAoAAgAAAAAAAAAOAAoAAgAAAAAAAAAPAAoAAgAAAAAAAAAQAAoAAgAAAAAAAAARAAoAAgAAAAAAAAASAAoAAgAAAAAAAAATAAoAAgAAAAAAAAAUAAoAAgAAAAAAAAAVAAoAAgAAAAAAAAAWAAoAAgAAAAAAAAAXAAoAAgAAAAAAAAAYAAoAAgAAAAAAAAAZAAoAAgAAAAAAAAAkAAoAAgAAAAAAAAAlAAoAAgAAAAAAAAAmAAoAAgAAAAAAAAAnAAoAAgAAAAAAAAA=")
@@ -89,7 +90,7 @@ position = Vector2(772, 212)
 
 [node name="CollisionShape2D" parent="TimeZone2" index="0" unique_id=1175480012]
 position = Vector2(16, -16.5)
-shape = SubResource("RectangleShape2D_f62st")
+shape = SubResource("RectangleShape2D_xx6b8")
 
 [editable path="Player"]
 [editable path="TimeZone2"]
