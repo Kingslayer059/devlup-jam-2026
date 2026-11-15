@@ -10,6 +10,8 @@ func _ready() -> void:
 	Global.change_to_past.connect(on_change_to_past)
 	if plant == null:
 		printerr("No plant assigned")
+	else:
+		plant.process_mode = Node.PROCESS_MODE_DISABLED
 
 func interact() -> void:
 	if Global.is_present:
@@ -30,11 +32,13 @@ func interact() -> void:
 func on_change_to_present() -> void:
 	if !planted:
 		return
+	plant.process_mode = Node.PROCESS_MODE_INHERIT
 	plant.visible = true
 	seed.visible = false
 
 func on_change_to_past() -> void:
 	if !planted:
 		return
+	plant.process_mode = Node.PROCESS_MODE_DISABLED
 	plant.visible = false
 	seed.visible = true

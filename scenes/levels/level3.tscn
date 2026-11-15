@@ -1,15 +1,15 @@
 [gd_scene format=4 uid="uid://dkr0qysv5swy2"]
 
 [ext_resource type="Script" uid="uid://bto5hs3mgu8bm" path="res://scenes/main/main_scene.gd" id="1_8w0pe"]
-[ext_resource type="AudioStream" uid="uid://dlrmb5qax4kap" path="res://music/jam.mp3" id="2_7eb4w"]
-[ext_resource type="AudioStream" uid="uid://0kwehhn1d8ct" path="res://music/cornipelago-past-theme.mp3" id="3_hadiw"]
+[ext_resource type="AudioStream" uid="uid://b6173wfry5vty" path="res://music/jam.mp3" id="2_7eb4w"]
+[ext_resource type="AudioStream" uid="uid://b0k1h7fsxqvin" path="res://music/cornipelago-past-theme.mp3" id="3_hadiw"]
 [ext_resource type="Script" uid="uid://c87xxjiwwn6q0" path="res://scenes/dummy/time/time_swap.gd" id="4_72x3h"]
 [ext_resource type="PackedScene" uid="uid://dtq3ror6kqxks" path="res://scenes/tilemap/main_tile_map.tscn" id="5_wb0vq"]
 [ext_resource type="PackedScene" uid="uid://b0cb8r03b35b7" path="res://scenes/ground/plantable_area/plantable_area.tscn" id="6_7eb4w"]
-[ext_resource type="PackedScene" uid="uid://c6lxojqstrfj6" path="res://scenes/objects/vines/vines.tscn" id="6_8w0pe"]
 [ext_resource type="PackedScene" uid="uid://d2pdj71x7vy3t" path="res://scenes/player/player.tscn" id="7_522sc"]
 [ext_resource type="PackedScene" uid="uid://ux4khvu53ltx" path="res://scenes/items/seed/seed.tscn" id="7_hadiw"]
 [ext_resource type="PackedScene" uid="uid://ba5gpwub2laup" path="res://scenes/items/collectible/collectible.tscn" id="8_a82vw"]
+[ext_resource type="PackedScene" uid="uid://besvux04kyyk6" path="res://scenes/objects/vines/vines.tscn" id="10_hadiw"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_2r1tl"]
 stream_count = 2
@@ -25,6 +25,9 @@ script = ExtResource("1_8w0pe")
 unique_name_in_owner = true
 stream = SubResource("AudioStreamSynchronized_2r1tl")
 autoplay = true
+
+[node name="AudioStreamPlayerSFX" type="AudioStreamPlayer2D" parent="." unique_id=2010632993]
+unique_name_in_owner = true
 
 [node name="TimeSwap" type="Node2D" parent="." unique_id=589447521 node_paths=PackedStringArray("past", "present", "past_tileset", "present_tileset")]
 script = ExtResource("4_72x3h")
@@ -42,7 +45,7 @@ tile_map_data = PackedByteArray("AAAAAAoAAgAAAAAAAAABAAoAAgAAAAAAAAACAAoAAgAAAAA
 [node name="Present" type="Node2D" parent="TimeSwap" unique_id=130517471]
 
 [node name="MainTileMapPresent" parent="TimeSwap/Present" unique_id=1037921351 instance=ExtResource("5_wb0vq")]
-tile_map_data = PackedByteArray("AAATAAoAAgAAAAEAAAASAAoAAgAAAAEAAAARAAoAAgAAAAEAAAAQAAoAAgAAAAEAAAAPAAoAAgADAAEAAAAOAAoAAgAAAAEAAAANAAoAAgAAAAEAAAAMAAoAAgAAAAEAAAALAAoAAgAAAAEAAAAKAAoAAgAAAAEAAAAJAAoAAgAAAAEAAAAIAAoAAgAAAAEAAAAHAAoAAgAAAAEAAAAGAAoAAgAAAAEAAAAFAAoAAgAAAAEAAAAEAAoAAgAAAAEAAAADAAoAAgAAAAEAAAACAAoAAgAAAAEAAAABAAoAAgAAAAEAAAAAAAoAAgAAAAEAAAAUAAoAAgAAAAEAAAAVAAoAAgAAAAEAAAAWAAoAAgAAAAEAAAAXAAoAAgAAAAEAAAAYAAoAAgAAAAEAAAAZAAoAAgAAAAEAAAAaAAoAAgAAAAEAAAAbAAoAAgAAAAEAAAAcAAoAAgAAAAEAAAAdAAoAAgAAAAEAAAARAAIAAgAAAAEAAAASAAIAAgAAAAEAAAATAAIAAgAAAAEAAAAUAAIAAgAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAATAAoAAgAAAAEAAAASAAoAAgAAAAEAAAARAAoAAgAAAAEAAAAQAAoAAgAAAAEAAAAPAAoAAgADAAEAAAAOAAoAAgAAAAEAAAANAAoAAgAAAAEAAAAMAAoAAgAAAAEAAAALAAoAAgAAAAEAAAAKAAoAAgAAAAEAAAAJAAoAAgAAAAEAAAAIAAoAAgAAAAEAAAAHAAoAAgAAAAEAAAAGAAoAAgAAAAEAAAAEAAoAAgAAAAEAAAADAAoAAgAAAAEAAAACAAoAAgAAAAEAAAABAAoAAgAAAAEAAAAAAAoAAgAAAAEAAAAUAAoAAgAAAAEAAAAVAAoAAgAAAAEAAAAWAAoAAgAAAAEAAAAXAAoAAgAAAAEAAAAYAAoAAgAAAAEAAAAZAAoAAgAAAAEAAAAaAAoAAgAAAAEAAAAbAAoAAgAAAAEAAAAcAAoAAgAAAAEAAAAdAAoAAgAAAAEAAAARAAIAAgAAAAEAAAASAAIAAgAAAAEAAAATAAIAAgAAAAEAAAAUAAIAAgAAAAEAAAAFAAoAAgAAAAEAAAA=")
 collision_enabled = false
 
 [node name="Seed" parent="TimeSwap/Present" unique_id=1372728815 instance=ExtResource("7_hadiw")]
@@ -52,30 +55,17 @@ position = Vector2(751, 301)
 position = Vector2(40, 301)
 collision_mask = 22
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=803410758]
-
 [node name="collectible" parent="." unique_id=1021277217 instance=ExtResource("8_a82vw")]
 position = Vector2(602, 32)
 
 [node name="PlantableArea" parent="." unique_id=950168230 node_paths=PackedStringArray("plant") instance=ExtResource("6_7eb4w")]
-position = Vector2(494, 336)
+position = Vector2(496, 336)
 plant = NodePath("Vines")
 
 [node name="Vines" type="Node2D" parent="PlantableArea" unique_id=1898201431]
 visible = false
 position = Vector2(-57, -48)
 
-[node name="Vines" parent="PlantableArea/Vines" unique_id=2127513875 instance=ExtResource("6_8w0pe")]
-position = Vector2(57, 0)
-
-[node name="Vines" parent="PlantableArea/Vines/Vines" unique_id=1284990825 instance=ExtResource("6_8w0pe")]
-position = Vector2(0, -65)
-
-[node name="Vines" parent="PlantableArea/Vines/Vines/Vines" unique_id=1111413611 instance=ExtResource("6_8w0pe")]
-position = Vector2(0, -65)
-
-[node name="Vines" parent="PlantableArea/Vines/Vines/Vines/Vines" unique_id=765495487 instance=ExtResource("6_8w0pe")]
-position = Vector2(0, -64)
-
-[node name="Vines2" parent="PlantableArea/Vines/Vines/Vines/Vines" unique_id=175834561 instance=ExtResource("6_8w0pe")]
-position = Vector2(0, -128)
+[node name="Vines" parent="PlantableArea/Vines" unique_id=1540980208 instance=ExtResource("10_hadiw")]
+position = Vector2(41, 32)
+tile_map_data = PackedByteArray("AAAAAP//AAAAAAAAAgAAAP7/AAAAAAAAAwAAAP3/AAAAAAAAAwAAAPz/AAAAAAAAAwAAAPv/AAAAAAAAAwAAAPr/AAAAAAAAAwAAAPn/AAAAAAAAAwAAAPj/AAAAAAAAAwAAAPf/AAAAAAAAAwAAAPX/AAAAAAAAAQAAAPb/AAAAAAAAAwA=")
