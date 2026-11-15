@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b84kpfeabhy5y"]
+
+[ext_resource type="Script" uid="uid://befe0sa32m2f2" path="res://scenes/items/seed/seed.gd" id="1_xakdh"]
+[ext_resource type="Texture2D" uid="uid://bt13nucx16fto" path="res://scenes/items/seed/pumpkin_seed/pumpking_seed.png" id="2_dcy43"]
+
+[node name="PumpkinSeed" type="Node2D" unique_id=1372728815]
+script = ExtResource("1_xakdh")
+plant_type = "pumpkin"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2010974282]
+texture_filter = 1
+texture = ExtResource("2_dcy43")

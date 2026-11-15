@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://ba5gpwub2laup"]
 
 [ext_resource type="Script" uid="uid://du61q5w0ychk2" path="res://scenes/items/collectible/collectible.gd" id="1_s1wki"]
-[ext_resource type="Texture2D" uid="uid://bsrfxxnp16n13" path="res://scenes/items/collectible/collectible.png" id="2_e2l6d"]
+[ext_resource type="Texture2D" uid="uid://ceeijtq4cqxna" path="res://scenes/items/collectible/collectible.png" id="2_e2l6d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i0hod"]
-radius = 13.393634
-height = 67.82271
+radius = 4.2389193
+height = 22.607569
 
 [node name="Collectible" type="Area2D" unique_id=1021277217]
 texture_filter = 1
