@@ -31,11 +31,11 @@ stream_0/volume = 0.0
 stream_1/stream = ExtResource("3_vnf24")
 stream_1/volume = 0.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngf84"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_po1mw"]
 resource_local_to_scene = true
 size = Vector2(378.5, 184.00003)
 
-[node name="Level3" type="Node2D" unique_id=631564884]
+[node name="Level5" type="Node2D" unique_id=631564884]
 script = ExtResource("1_lsgss")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2087684283]
@@ -291,7 +291,7 @@ position = Vector2(-463, -50.000008)
 [node name="CollisionShape2D" parent="TimeZone2" index="0" unique_id=1175480012]
 position = Vector2(32.75, 14.000008)
 scale = Vector2(1, 0.99999994)
-shape = SubResource("RectangleShape2D_ngf84")
+shape = SubResource("RectangleShape2D_po1mw")
 
 [editable path="Player"]
 [editable path="TimeZone2"]

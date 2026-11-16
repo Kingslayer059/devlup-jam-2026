@@ -939,4 +939,5 @@ sources/0 = SubResource("TileSetAtlasSource_216ie")
 sources/1 = SubResource("TileSetAtlasSource_rmsu6")
 
 [node name="BackgroundTilemap" type="TileMapLayer" unique_id=899568984]
+z_index = -1
 tile_set = SubResource("TileSet_27sdg")

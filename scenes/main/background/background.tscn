@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dn60slc84plxt"]
+
+[ext_resource type="Texture2D" uid="uid://h00cj1eort3d" path="res://scenes/main/background/thanks_for_playing5.png" id="1_f0jvp"]
+
+[node name="Background" type="TextureRect" unique_id=1912225987]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_f0jvp")

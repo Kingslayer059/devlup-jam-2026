@@ -35,12 +35,14 @@ autoplay = true
 [node name="AudioStreamPlayerSFX" type="AudioStreamPlayer2D" parent="." unique_id=2010632993]
 unique_name_in_owner = true
 
-[node name="TimeSwap" type="Node2D" parent="." unique_id=589447521 node_paths=PackedStringArray("past", "present", "past_tileset", "present_tileset")]
+[node name="TimeSwap" type="Node2D" parent="." unique_id=589447521 node_paths=PackedStringArray("past", "present", "past_tileset", "present_tileset", "bridge_past_tileset", "bridge_present_tileset")]
 script = ExtResource("4_f62st")
 past = NodePath("Past")
 present = NodePath("Present")
 past_tileset = NodePath("Past/MainTileMapPast")
 present_tileset = NodePath("Present/MainTileMapPresent")
+bridge_past_tileset = NodePath("Past/BridgeTileMap")
+bridge_present_tileset = NodePath("Present/BridgeTileMap")
 
 [node name="Past" type="Node2D" parent="TimeSwap" unique_id=1157280643]
 visible = false
@@ -53,7 +55,8 @@ tile_map_data = PackedByteArray("AAA8ABMAAAAJAAAAAAA8ABQAAAAEAAAAAAA9ABMAAAAJAAA
 collision_enabled = false
 
 [node name="KeyGate" parent="TimeSwap/Past" unique_id=1522181517 instance=ExtResource("8_4vryo")]
-position = Vector2(398, 259)
+z_index = 1
+position = Vector2(396, 260)
 collision_layer = 16
 
 [node name="BackgroundTilemap" parent="TimeSwap/Past" unique_id=899568984 instance=ExtResource("8_xx6b8")]
